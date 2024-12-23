@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Layout from "../Components/Layout.jsx";
+
 import Home from "../Components/Home.jsx";
 import AllVisas from "../Components/AllVisas.jsx";
 import AddVisa from "../Components/AddVisa.jsx";
@@ -8,11 +8,12 @@ import MyVisaApplications from "../Components/MyVisaApplications.jsx";
 import Login from "../Components/Login.jsx";
 import Register from "../Components/Register.jsx";
 import ErrorPage from "../Components/ErrorPage.jsx";
+import App from "../App.jsx";
 
 const Routes = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <App />,
     children: [
       {
         path: "/",

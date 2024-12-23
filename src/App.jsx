@@ -1,4 +1,4 @@
-import './App.css'
+
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
       </p>
     </>
   )
-  
+
 }
 
 export default App
