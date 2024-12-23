@@ -2,7 +2,7 @@
 const MyAddedVisas = () => {
   return (
     <div>
-      
+      This is MyAddedVisas
     </div>
   );
 };

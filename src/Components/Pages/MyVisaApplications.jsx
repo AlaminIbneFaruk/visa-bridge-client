@@ -3,7 +3,7 @@
 const MyVisaApplications = () => {
   return (
     <div>
-      
+      This is MyVisaApplications
     </div>
   );
 };

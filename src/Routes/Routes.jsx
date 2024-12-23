@@ -1,19 +1,19 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Home from "../Components/Home.jsx";
-import AllVisas from "../Components/AllVisas.jsx";
-import AddVisa from "../Components/AddVisa.jsx";
-import MyAddedVisas from "../Components/MyAddedVisas.jsx";
-import MyVisaApplications from "../Components/MyVisaApplications.jsx";
-import Login from "../Components/Login.jsx";
-import Register from "../Components/Register.jsx";
-import ErrorPage from "../Components/ErrorPage.jsx";
-import App from "../App.jsx";
+import Home from "../Components/Pages/Home.jsx";
+import AllVisas from "../Components/Pages/AllVisas.jsx";
+import AddVisa from "../Components/Pages/AddVisa.jsx";
+import MyAddedVisas from "../Components/Pages/MyAddedVisas.jsx";
+import MyVisaApplications from "../Components/Pages/MyVisaApplications.jsx";
+import Login from "../Components/Pages/Login.jsx";
+import Register from "../Components/Pages/Register.jsx";
+import ErrorPage from "../Components/Pages/ErrorPage.jsx";
+import Layout from "../Components/Layout.jsx";
 
 const Routes = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Layout />,
     children: [
       {
         path: "/",
