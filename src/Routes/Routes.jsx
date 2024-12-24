@@ -49,12 +49,12 @@ const Routes = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
-      {
-        path: "*",
-        element: <ErrorPage />,
-      },
     ],
-  },
+    
+  },{
+    path:"*",
+    element:<ErrorPage/>
+  }
 ]);
 
 export default Routes;

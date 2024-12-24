@@ -67,6 +67,9 @@ const Navbar = () => {
         <li>
           <Link to="/my-visa-applications">My Visa Applications</Link>
         </li>
+        <li>
+          <Link to="/my">Error page</Link>
+        </li>
       </ul>
     </div>
     <div className="navbar-end">
