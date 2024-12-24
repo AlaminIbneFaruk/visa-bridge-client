@@ -47,7 +47,7 @@ const Navbar = () => {
         to="/"
         className="btn btn-ghost text-xl font-sans font-bold bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-500 bg-clip-text text-transparent"
       >
-        VISABRIDGE
+        VISA BRIDGE
       </Link>
     </div>
     <div className="navbar-center hidden lg:flex">
@@ -66,9 +66,6 @@ const Navbar = () => {
         </li>
         <li>
           <Link to="/my-visa-applications">My Visa Applications</Link>
-        </li>
-        <li>
-          <Link to="/my">Error page</Link>
         </li>
       </ul>
     </div>
