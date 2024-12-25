@@ -1,6 +1,6 @@
 ## Visa Navigator - Visa Bridge
 
-# <img width="30px" src="https://i.ibb.co/DY639Qz/download-10.jpg"/>
+# <img src="https://i.ibb.co/DY639Qz/download-10.jpg"/>
 
 ### **Brief Description:**
 Visa Bridge is a web application designed to simplify the process of understanding visa requirements, managing visa applications, and tracking their progress. The application provides a user-friendly interface to ensure a seamless experience for users.
