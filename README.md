@@ -1,8 +1,63 @@
-# React + Vite
+## Visa Navigator - Visa Bridge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# <img width="30px" src="https://i.ibb.co/DY639Qz/download-10.jpg"/>
 
-Currently, two official plugins are available:
+### **Brief Description:**
+Visa Bridge is a web application designed to simplify the process of understanding visa requirements, managing visa applications, and tracking their progress. The application provides a user-friendly interface to ensure a seamless experience for users.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+### Features:
+
+#### Navbar
+- Features a logo.
+- Includes a navigation menu.
+
+#### Banner
+- Dynamic banner with functionality:
+  - Clicking a button updates content or provides quick access to key features.
+
+#### Main Section Design
+- The main section consists of two parts:
+  - **Visa Information**: Displays comprehensive visa-related details by default.
+  - **Application Status**: Tracks the progress and status of user visa applications.
+- Enables users to switch easily between sections.
+
+#### Managing Visa Information
+- Displays all available visa details in a structured format with the following information:
+  - Country, Type of Visa, Requirements, Processing Time, and Fees.
+- Includes an "Apply Now" button for each visa type.
+
+#### Application Management
+- Lists submitted applications with details including:
+  - Application ID, Submission Date, Current Status, and Actions (like update or cancel).
+
+#### Additional Features
+- **Search and Filter**: Quickly locate visa details or applications.
+- **Dark/Light Theme Toggle**: Personalize the user experience.
+- **404 Page**: Custom error page for invalid routes.
+- **Lottie Animations**: Adds visual appeal with smooth animations.
+- **React Tooltip**: Displays helpful hints and information on hover.
+
+---
+
+### Technologies Used:
+- **React** (including Hooks, JSX)
+- **JavaScript** (ES6+ features)
+- **Fetch API** (for data fetching)
+- **PropTypes** (for type-checking React props)
+- **CSS & Tailwind CSS** (for styling)
+- **Font Awesome** (for icons)
+
+---
+
+<hr/>
+
+### Live Link:
+[Visa Navigator App](https://visanavigatorapp.netlify.app/)
+
+<hr/>
+
+### GitHub Repository Link:
+[Visa Navigator GitHub Repo](https://github.com/your-username/visa-bridge)
+
