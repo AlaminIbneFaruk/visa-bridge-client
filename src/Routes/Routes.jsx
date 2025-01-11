@@ -9,6 +9,7 @@ import Login from "../Components/Pages/Login.jsx";
 import Register from "../Components/Pages/Register.jsx";
 import ErrorPage from "../Components/Pages/ErrorPage.jsx";
 import Layout from "../Components/Layout.jsx";
+import PrivateRoutes from "./PrivateRoutes.jsx";
 
 const Routes = createBrowserRouter([
   {
@@ -25,21 +26,24 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/add-visa",
-        element: (
-            <AddVisa />
-        ),
+        element: <PrivateRoutes>
+
+          <AddVisa />
+        </PrivateRoutes>
+        ,
       },
       {
         path: "/my-added-visas",
-        element: (
+        element: <PrivateRoutes>
             <MyAddedVisas />
-        ),
+        </PrivateRoutes>
+        ,
       },
       {
         path: "/my-visa-applications",
-        element: (
+        element: <PrivateRoutes>
             <MyVisaApplications />
-        ),
+        </PrivateRoutes>,
       },
       {
         path: "/login",
