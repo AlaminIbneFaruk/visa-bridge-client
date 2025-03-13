@@ -4,7 +4,7 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
-  
+
   return (
     <>
       <div className="navbar bg-gradient-to-l from-indigo-500 via-sky-400 to-white">
@@ -40,10 +40,12 @@ const Navbar = () => {
                 <Link to="/add-visa">Add Visa</Link>
               </li>
               <li>
-                <Link to="/my-added-visas">My Added Visas</Link>
+                <Link to={`/my-added-visas/${user?.uid}`}>My Added Visas</Link>
               </li>
               <li>
-                <Link to="/my-visa-applications">My Visa Applications</Link>
+                <Link to={`/my-visa-applications/${user?.uid}`}>
+                  My Visa Applications
+                </Link>
               </li>
             </ul>
           </div>
@@ -68,10 +70,12 @@ const Navbar = () => {
                   <Link to="/add-visa">Add Visa</Link>
                 </li>
                 <li>
-                  <Link to="/my-added-visas">My Added Visas</Link>
+                  <Link to={`/my-added-visas/${user?.uid}`}>My Added Visas</Link>
                 </li>
                 <li>
-                  <Link to="/my-visa-applications">My Visa Applications</Link>
+                  <Link to={`/my-visa-applications/${user?.uid}`}>
+                    My Visa Applications
+                  </Link>
                 </li>
               </>
             )}
@@ -92,8 +96,8 @@ const Navbar = () => {
               <div className="flex items-center gap-2 bg-gradient-to-r from-blue-300 via-sky-200 to-blue-300 px-3 py-1 rounded-full">
                 {user.photoURL && (
                   <img
-                    src={user.photoURL}
-                    alt={user.displayName || "User"}
+                    src={user?.photoURL}
+                    alt={user?.displayName || "User"}
                     className="w-8 h-8 rounded-full object-cover"
                     onError={(e) => {
                       e.target.src = "https://via.placeholder.com/32"; // Fallback image

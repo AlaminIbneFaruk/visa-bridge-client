@@ -43,15 +43,15 @@ const AllVisas = () => {
                   </div>
                 </h2>
                 <div className="grid gap-2">
-                  <div className="stat">
+                  <div className="stat border-2">
                     <div className="stat-title">Fee</div>
                     <div className="stat-value text-primary">৳{visa.fee}</div>
                   </div>
-                  <div className="stat">
+                  <div className="stat border-2">
                     <div className="stat-title">Validity</div>
                     <div className="stat-value">{visa.validity} days</div>
                   </div>
-                  <div className="stat">
+                  <div className="stat border-2">
                     <div className="stat-title">Processing</div>
                     <div className="stat-value">{visa.processingTime} days</div>
                   </div>
@@ -66,6 +66,9 @@ const AllVisas = () => {
                   <div className="badge badge-outline">
                     {visa?.Age_Restriction?`${visa?.Age_Restriction}+ years`:"None"} 
                   </div>
+                </div>
+                <div>
+                  <button className="btn btn-primary font-bold">See Details</button>
                 </div>
               </div>
             </div>

@@ -8,10 +8,16 @@
     "fee": "393000",
     "validity": "110",
     "required_documents": "Passport, Application Form, Photo",
-    "description": "Sunt laboris labore amet pariatur veniam velit eu excepteur non enim excepteur proident. Duis ut ea reprehenderit et aute laboris irure.",
+    "description": "Discover the delights of Belgium as a tourist, where history, culture, and indulgence await. Wander through charming medieval towns, savor world-famous chocolates and beers, and marvel at stunning architecture, all while experiencing the warm hospitality and unique blend of French and Flemish influences that define this enchanting destination.",
     "Age_Restriction": null,
     "Application_method": "Online",
-    "required_files": ["Travel Itinerary", "Photo", "Visa Invitation"]
+    "required_files": ["Travel Itinerary", "Photo", "Visa Invitation"],
+    "user":{
+      "uid": "0AbpVVXOgMY5BQbfhFc6Yjq25Km1",
+      "email": "alaminibnefarukayon@gmail.com",
+      "username": "Alamin Ibne Faruk",
+      "photo": "https://lh3.googleusercontent.com/a/ACg8ocLuhJifUWhIIV04R-Jk6xo9nqX1PANv1Ot7TtWXuHF7aFbGmA=s96-c"
+    }
   },
   {
     "id": "6783a77b7dc53b15920983e2",
@@ -22,10 +28,16 @@
     "fee": "434000",
     "validity": "265",
     "required_documents": "Passport, Financial Proof, Photo",
-    "description": "Nisi ut ut sint deserunt cillum occaecat nulla culpa ut enim labore incididunt. Fugiat ullamco dolore aute reprehenderit deserunt tempor consequat sunt excepteur qui quis laboris aliqua nisi.",
+    "description": "Embark on a fulfilling work experience in Romania, a country of rich heritage and emerging opportunities. Engage in a vibrant professional setting where dedication meets innovation, offering the chance to collaborate with skilled teams, contribute to dynamic projects, and immerse yourself in a culture that balances tradition with progress.",
     "Age_Restriction": "21",
     "Application_method": "Online",
-    "required_files": ["Financial Proof", "Travel Itinerary"]
+    "required_files": ["Financial Proof", "Travel Itinerary"],
+    "user":{
+      "uid": "0AbpVVXOgMY5BQbfhFc6Yjq25Km1",
+      "email": "alaminibnefarukayon@gmail.com",
+      "username": "Alamin Ibne Faruk",
+      "photo": "https://lh3.googleusercontent.com/a/ACg8ocLuhJifUWhIIV04R-Jk6xo9nqX1PANv1Ot7TtWXuHF7aFbGmA=s96-c"
+    }
   },
   {
     "id": "6783a77be597b70500bc77ee",
@@ -36,10 +48,16 @@
     "fee": "460000",
     "validity": "246",
     "required_documents": "Passport, Application Form, Photo",
-    "description": "Elit elit do fugiat ad nisi nostrud. Excepteur incididunt sit dolore reprehenderit cupidatat esse.",
+    "description": "Pursue an inspiring student experience in Egypt, a land of ancient wonders and modern opportunities. Dive into a unique academic journey surrounded by iconic monuments, vibrant traditions, and a dynamic learning environment that blends history with innovation, fostering curiosity and growth.",
     "Age_Restriction": "18",
     "Application_method": "Online",
-    "required_files": ["Photo", "Passport Copy", "Visa Invitation"]
+    "required_files": ["Photo", "Passport Copy", "Visa Invitation"],
+    "user":{
+      "uid": "0AbpVVXOgMY5BQbfhFc6Yjq25Km1",
+      "email": "alaminibnefarukayon@gmail.com",
+      "username": "Alamin Ibne Faruk",
+      "photo": "https://lh3.googleusercontent.com/a/ACg8ocLuhJifUWhIIV04R-Jk6xo9nqX1PANv1Ot7TtWXuHF7aFbGmA=s96-c"
+    }
   },
   {
     "id": "6783a77b6f4126ac50a05edc",
@@ -50,10 +68,16 @@
     "fee": "333000",
     "validity": "104",
     "required_documents": "Passport, Visa Invitation, Photo",
-    "description": "Id id labore cillum incididunt incididunt aliqua ad. Reprehenderit incididunt dolor esse sunt deserunt excepteur et nostrud.",
+    "description": "Experience a seamless transit through Greece, a crossroads of history and beauty. Enjoy a brief yet captivating stopover amidst ancient ruins, azure waters, and warm Mediterranean charm, where every moment offers a glimpse into a rich cultural heritage and breathtaking scenery.",
     "Age_Restriction": "18 ",
     "Application_method": "Offline",
-    "required_files": ["Passport Copy", "Travel Itinerary"]
+    "required_files": ["Passport Copy", "Travel Itinerary"],
+    "user":{
+      "uid": "0AbpVVXOgMY5BQbfhFc6Yjq25Km1",
+      "email": "alaminibnefarukayon@gmail.com",
+      "username": "Alamin Ibne Faruk",
+      "photo": "https://lh3.googleusercontent.com/a/ACg8ocLuhJifUWhIIV04R-Jk6xo9nqX1PANv1Ot7TtWXuHF7aFbGmA=s96-c"
+    }
   },
   {
     "id": "6783a77b5e15576059baa24b",
@@ -64,10 +88,16 @@
     "fee": "269000",
     "validity": "90",
     "required_documents": "Passport, Health Insurance, Photo",
-    "description": "Laborum proident irure id consequat. Sint ut labore sit ea consectetur ex quis anim ex voluptate quis excepteur voluptate.",
+    "description": "Embark on an enriching student journey in Finland, a global leader in education and innovation. Immerse yourself in a supportive academic environment that encourages creativity and critical thinking, surrounded by stunning natural landscapes and a culture that values learning, resilience, and personal growth.",
     "Age_Restriction": "18 ",
     "Application_method": "Offline",
-    "required_files": ["Passport Copy", "Visa Invitation"]
+    "required_files": ["Passport Copy", "Visa Invitation"],
+    "user":{
+      "uid": "0AbpVVXOgMY5BQbfhFc6Yjq25Km1",
+      "email": "alaminibnefarukayon@gmail.com",
+      "username": "Alamin Ibne Faruk",
+      "photo": "https://lh3.googleusercontent.com/a/ACg8ocLuhJifUWhIIV04R-Jk6xo9nqX1PANv1Ot7TtWXuHF7aFbGmA=s96-c"
+    }
   },
   {
     "id": "6783a77baf81a9f7ef4fbdaa",
@@ -78,10 +108,16 @@
     "fee": "352000",
     "validity": "120",
     "required_documents": "Passport, Visa Invitation, Photo",
-    "description": "In minim ex laborum Lorem. Do in cupidatat ex officia incididunt laborum adipisicing nulla.",
+    "description": "Explore a thriving business opportunity in Norway, a hub of innovation and sustainability. Engage in a professional landscape that values efficiency and forward-thinking, where you can connect with industry leaders, foster strategic partnerships, and experience a dynamic market shaped by Norway's commitment to excellence and natural beauty.",
     "Age_Restriction": null,
     "Application_method": "Online",
-    "required_files": ["Travel Itinerary", "Passport Copy", "Financial Proof", "Photo"]
+    "required_files": ["Travel Itinerary", "Passport Copy", "Financial Proof", "Photo"],
+    "user":{
+      "uid": "0AbpVVXOgMY5BQbfhFc6Yjq25Km1",
+      "email": "alaminibnefarukayon@gmail.com",
+      "username": "Alamin Ibne Faruk",
+      "photo": "https://lh3.googleusercontent.com/a/ACg8ocLuhJifUWhIIV04R-Jk6xo9nqX1PANv1Ot7TtWXuHF7aFbGmA=s96-c"
+    }
   },
   {
     "id": "6783a77bb2c67c5fbd5c90e1",
@@ -92,10 +128,16 @@
     "fee": "485000",
     "validity": "365",
     "required_documents": "Passport, Work Contract, Health Insurance",
-    "description": "Laboris veniam velit incididunt deserunt incididunt exercitation ipsum consectetur labore esse esse occaecat.",
+    "description": "Embark on a rewarding work experience in Japan, a land of innovation and tradition. Immerse yourself in a dynamic professional environment where dedication and skill converge, offering opportunities to engage with cutting-edge industries, collaborate with talented teams, and embrace the unique blend of discipline and creativity that defines Japanese work culture.",
     "Age_Restriction": "21",
     "Application_method": "Online",
-    "required_files": ["Work Contract", "Passport Copy", "Health Insurance"]
+    "required_files": ["Work Contract", "Passport Copy", "Health Insurance"],
+    "user":{
+      "uid": "0AbpVVXOgMY5BQbfhFc6Yjq25Km1",
+      "email": "alaminibnefarukayon@gmail.com",
+      "username": "Alamin Ibne Faruk",
+      "photo": "https://lh3.googleusercontent.com/a/ACg8ocLuhJifUWhIIV04R-Jk6xo9nqX1PANv1Ot7TtWXuHF7aFbGmA=s96-c"
+    }
   },
   {
     "id": "6783a77bdfd08c02aa4ed760",
@@ -106,9 +148,15 @@
     "fee": "250000",
     "validity": "90",
     "required_documents": "Passport, Travel Insurance, Photo",
-    "description": "Ex aliqua non consectetur ex tempor consequat dolore aute magna cillum sint non.",
+    "description": "Experience a vibrant journey through Brazil, where stunning landscapes and rich culture await. From the breathtaking beaches of Rio de Janeiro to the lush Amazon rainforest, this trip offers an unforgettable adventure filled with natural beauty, lively traditions, and warm hospitality.",
     "Age_Restriction": null,
     "Application_method": "Offline",
-    "required_files": ["Travel Insurance", "Photo", "Passport Copy"]
+    "required_files": ["Travel Insurance", "Photo", "Passport Copy"],
+    "user":{
+      "uid": "0AbpVVXOgMY5BQbfhFc6Yjq25Km1",
+      "email": "alaminibnefarukayon@gmail.com",
+      "username": "Alamin Ibne Faruk",
+      "photo": "https://lh3.googleusercontent.com/a/ACg8ocLuhJifUWhIIV04R-Jk6xo9nqX1PANv1Ot7TtWXuHF7aFbGmA=s96-c"
+    }
   }
 ]

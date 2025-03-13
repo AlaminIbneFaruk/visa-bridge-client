@@ -33,14 +33,14 @@ const Routes = createBrowserRouter([
         ,
       },
       {
-        path: "/my-added-visas",
+        path: "/my-added-visas/:uid",
         element: <PrivateRoutes>
             <MyAddedVisas />
         </PrivateRoutes>
         ,
       },
       {
-        path: "/my-visa-applications",
+        path: "/my-visa-applications/:uid",
         element: <PrivateRoutes>
             <MyVisaApplications />
         </PrivateRoutes>,

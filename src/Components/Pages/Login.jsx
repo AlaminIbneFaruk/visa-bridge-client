@@ -45,14 +45,14 @@ const Login = () => {
       })
   }
   const [text] = useTypewriter({
-    words: [`"WELCOME BACK TO VISA BRIDGE"`, 'LOGIN NOW'],
+    words: [`"WELCOME TO VISA BRIDGE"`, 'LOGIN NOW'],
     loop: Infinity,
   })
 
   return (
     <div className="py-8">
       <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl">
-        <div className="text-center max-w-60 font-sans font-bold bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-500 bg-clip-text text-transparent pt-5 text-2xl mx-auto">
+        <div className="text-center font-sans font-bold bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-500 bg-clip-text text-transparent pt-5 text-2xl mx-auto">
           {text}
         </div>
         <form className="card-body" onSubmit={handleLogin}>
