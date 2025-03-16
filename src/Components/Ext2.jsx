@@ -2,9 +2,9 @@ import { Fade } from "react-awesome-reveal";
 
 const Ext2 = () => {
   return (
-    <div className="flex flex-wrap justify-center gap-10 mt-12">
-      <div className="card bg-sky-600 shadow-xl w-full lg:w-1/2">
-        <div className="card-body flex flex-col justify-center items-center text-center">
+    <div className="flex flex-col justify-center gap-10 mt-12">
+      <div className="card bg-sky-600 shadow-xl w-full">
+        <div className="card-body justify-center items-center text-center">
           <Fade>
             <h2 className="card-title text-white text-3xl">
               Visa Requirements Overview
@@ -20,11 +20,11 @@ const Ext2 = () => {
           </Fade>
         </div>
       </div>
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-8">
         <Fade>
           <div
             className="card bg-sky-600
- shadow-xl w-80"
+ shadow-xl"
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">
@@ -40,7 +40,7 @@ const Ext2 = () => {
         <Fade>
           <div
             className="card bg-sky-600
- shadow-xl w-80"
+ shadow-xl "
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">
@@ -55,7 +55,7 @@ const Ext2 = () => {
         <Fade>
           <div
             className="card bg-sky-600
- shadow-xl w-80"
+ shadow-xl "
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">
@@ -70,7 +70,7 @@ const Ext2 = () => {
         <Fade>
           <div
             className="card bg-sky-600
- shadow-xl w-80"
+ shadow-xl "
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">
@@ -85,7 +85,7 @@ const Ext2 = () => {
         <Fade>
           <div
             className="card bg-sky-600
- shadow-xl w-80"
+ shadow-xl "
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">
@@ -100,7 +100,7 @@ const Ext2 = () => {
         <Fade>
           <div
             className="card bg-sky-600
- shadow-xl w-80"
+ shadow-xl "
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">
@@ -115,7 +115,7 @@ const Ext2 = () => {
         <Fade>
           <div
             className="card bg-sky-600
- shadow-xl w-80"
+ shadow-xl "
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">
@@ -130,7 +130,7 @@ const Ext2 = () => {
         <Fade>
           <div
             className="card bg-sky-600
- shadow-xl w-80"
+ shadow-xl "
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">
@@ -145,7 +145,7 @@ const Ext2 = () => {
         <Fade>
           <div
             className="card bg-sky-600
- shadow-xl w-80"
+ shadow-xl "
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">
@@ -160,7 +160,7 @@ const Ext2 = () => {
         <Fade>
           <div
             className="card bg-sky-600
- shadow-xl w-80"
+ shadow-xl "
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">
@@ -175,7 +175,7 @@ const Ext2 = () => {
         <Fade>
           <div
             className="card bg-sky-600
- shadow-xl w-80"
+ shadow-xl "
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">
@@ -190,7 +190,7 @@ const Ext2 = () => {
         <Fade>
           <div
             className="card bg-sky-600
- shadow-xl w-80"
+ shadow-xl "
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">
@@ -205,7 +205,7 @@ const Ext2 = () => {
         <Fade>
           <div
             className="card bg-sky-600
- shadow-xl w-80"
+ shadow-xl "
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">
@@ -220,7 +220,7 @@ const Ext2 = () => {
         <Fade>
           <div
             className="card bg-sky-600
- shadow-xl w-80"
+ shadow-xl "
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">

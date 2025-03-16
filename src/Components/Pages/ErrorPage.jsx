@@ -1,14 +1,7 @@
-
-
 const ErrorPage = () => {
   return (
     <div
-      className="hero min-h-screen"
-      style={{
-        backgroundImage: "url(https://i.ibb.co/KXhZ3BB/page-Not-Found.jpg)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="hero min-h-screen bg-gradient-to-b from-blue-500 via-purple-400 to-white"
     >
       <div className="hero-overlay bg-opacity-60 bg-black max-w-[calc(100%-500px)] h-80 rounded-lg"></div>
       <div className="hero-content text-neutral-content text-center">

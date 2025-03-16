@@ -53,7 +53,7 @@ const Navbar = () => {
             to="/"
             className="btn btn-ghost text-xl font-sans font-bold bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-500 bg-clip-text text-transparent"
           >
-            VISA BRIDGE
+            <img src="/VisaBridge.jpg" alt="VisaBridge" className="h-full"/>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -70,7 +70,9 @@ const Navbar = () => {
                   <Link to="/add-visa">Add Visa</Link>
                 </li>
                 <li>
-                  <Link to={`/my-added-visas/${user?.uid}`}>My Added Visas</Link>
+                  <Link to={`/my-added-visas/${user?.uid}`}>
+                    My Added Visas
+                  </Link>
                 </li>
                 <li>
                   <Link to={`/my-visa-applications/${user?.uid}`}>
@@ -87,7 +89,7 @@ const Navbar = () => {
               <Link to="/login" className="btn">
                 Login
               </Link>
-              <Link to="/register" className="btn btn-secondary">
+              <Link to="/register" className="btn btn-primary border border-black text-white">
                 Register
               </Link>
             </div>
@@ -95,18 +97,21 @@ const Navbar = () => {
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-2 bg-gradient-to-r from-blue-300 via-sky-200 to-blue-300 px-3 py-1 rounded-full">
                 {user.photoURL && (
-                  <img
-                    src={user?.photoURL}
-                    alt={user?.displayName || "User"}
-                    className="w-8 h-8 rounded-full object-cover"
-                    onError={(e) => {
-                      e.target.src = "https://via.placeholder.com/32"; // Fallback image
-                    }}
-                  />
+                  <div className="relative group">
+                    <img
+                      src={user?.photoURL}
+                      alt={user?.displayName || "User"}
+                      className="w-8 h-8 rounded-full object-cover border border-gray-300 shadow-sm"
+                      onError={(e) => {
+                        e.target.src = "https://via.placeholder.com/32";
+                      }}
+                    />
+                    <div className="absolute left-1/2 -translate-x-1/2 -bottom-10 bg-sky-800 text-white text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                      {user?.displayName}
+                      <div className="absolute left-1/2 -translate-x-1/2 -top-1 h-2 w-2 bg-sky-800 rotate-45"></div>
+                    </div>
+                  </div>
                 )}
-                <span className="text-sm font-medium">
-                  {user.displayName || "User"}
-                </span>
               </div>
               <button className="btn" onClick={signOutUser}>
                 Log Out

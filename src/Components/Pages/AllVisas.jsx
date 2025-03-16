@@ -17,7 +17,7 @@ const AllVisas = () => {
         <div className="bg-white py-4">
           <h1 className="text-4xl font-bold text-center">All Visas</h1>
         </div>
-        <div className="container mx-auto py-12 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="container mx-auto py-12 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {visas.map((visa) => (
             <div key={visa.id} className="card w-full bg-base-100 shadow-xl">
               <figure>

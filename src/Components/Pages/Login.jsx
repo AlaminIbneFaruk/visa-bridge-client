@@ -1,53 +1,56 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
-import { useContext } from "react";
+import { useRef, useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
-import { useTypewriter } from 'react-simple-typewriter';
+import { useTypewriter } from "react-simple-typewriter";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  const [errorMessage, setErrorMessage] = useState("");
-  const [success, setSuccess] = useState(false);
   const emailref = useRef(null);
   const { signInUser, signInGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
-  const handleLogin = (e) => {
+
+  const handleLogin = async (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log("You pressed Login!");
-    console.log("Email:", email, "Password:", password);
-    setErrorMessage("");
-    setSuccess(false);
-    // login code here
-    signInUser(email, password)
-      .then((userCredential) => {
-        console.log("User:", userCredential.user);
-        setSuccess(true);
-        e.target.reset();
+
+    console.log("You pressed Login!", "Email:", email, "Password:", password);
+
+    try {
+      const userCredential = await signInUser(email, password);
+      console.log("User:", userCredential.user);
+      toast.success("Logged in successfully!");
+      form.reset();
+      setTimeout(() => {
         navigate("/");
-      })
-      .catch((error) => {
-        console.log("Error:", error.code);
-        console.log("Error:", error.message);
-        setErrorMessage(`Error:${error.message}`);
-      });
+      }, 2000);
+    } catch (error) {
+      console.error("Error:", error.message);
+      toast.error(`Error: Erorr logging in! ${error.message}`);
+    }
   };
-  
-  const handleGoogle = () => {
-    signInGoogle()
-      .then(result =>{
-        console.log(result.user)
-        // navigate('/')
-      }).catch(error=>{
-        console.log(error.message)
-      })
-  }
+
+  const handleGoogle = async () => {
+    try {
+      const result = await signInGoogle();
+      console.log(result.user);
+      toast.success("Logged in Successfully with Google!");
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    } catch (error) {
+      console.error(error.message);
+      toast.error(`Error: Erorr logging in! ${error.message}`);
+    }
+  };
+
   const [text] = useTypewriter({
-    words: [`"WELCOME TO VISA BRIDGE"`, 'LOGIN NOW'],
+    words: ["WELCOME TO VISA BRIDGE", "LOGIN NOW"],
     loop: Infinity,
-  })
+  });
 
   return (
     <div className="py-8">
@@ -64,7 +67,7 @@ const Login = () => {
               name="email"
               ref={emailref}
               type="email"
-              placeholder="email"
+              placeholder="Enter your email"
               className="input input-bordered"
               required
             />
@@ -76,38 +79,32 @@ const Login = () => {
             <input
               name="password"
               type="password"
-              placeholder="password"
+              placeholder="Enter your password"
               className="input input-bordered"
               required
             />
-            <label className="label" >
+            <label className="label">
               <a href="#" className="label-text-alt link link-hover">
                 Forgot password?
               </a>
             </label>
           </div>
           <div className="form-control mt-2 gap-5">
-            <button className="btn btn-secondary" type="submit">
+            <button className="btn btn-primary" type="submit">
               Login
             </button>
-            <Link to="/register" className="btn btn-secondary text-white">
+            <Link to="/register" className="btn btn-outline btn-primary text-white">
               Register Now
             </Link>
           </div>
           <button
+            type="button"
             className="btn bg-blue-500 text-white hover:bg-blue-600"
             onClick={handleGoogle}
           >
             <FaGoogle className="text-2xl" />
             <span className="text-3xl">Google</span>
           </button>
-          <div>
-            <p className={errorMessage ? `text-red-500` : `text-green-600`}>
-              {errorMessage
-                ? `${errorMessage}`
-                : `${success ? `Logged in Successfull` : ""}`}
-            </p>
-          </div>
         </form>
       </div>
     </div>
