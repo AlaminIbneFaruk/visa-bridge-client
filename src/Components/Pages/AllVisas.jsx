@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AllVisas = () => {
   const [visas, setVisas] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
-    fetch("/visaInfo.json")
+    fetch("http://localhost:5000/allvisas")
       .then((res) => res.json())
       .then((data) => setVisas(data))
       .catch((error) => console.error("Error fetching visas:", error));
@@ -68,8 +69,15 @@ const AllVisas = () => {
                   </div>
                 </div>
                 <div>
-                  <button className="btn btn-primary font-bold">See Details</button>
-                </div>
+                <button
+                className="btn btn-primary font-bold"
+                onClick={() => {
+                  navigate(`/details/${visa?._id}`);
+                }}
+              >
+                See Details
+              </button>
+                              </div>
               </div>
             </div>
           ))}

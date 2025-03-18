@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import { useRef, useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
@@ -29,7 +30,7 @@ const Login = () => {
       }, 2000);
     } catch (error) {
       console.error("Error:", error.message);
-      toast.error(`Error: Erorr logging in! ${error.message}`);
+      toast.error(`Error: Error logging in! ${error.message}`);
     }
   };
 
@@ -43,7 +44,7 @@ const Login = () => {
       }, 2000);
     } catch (error) {
       console.error(error.message);
-      toast.error(`Error: Erorr logging in! ${error.message}`);
+      toast.error(`Error: Error logging in! ${error.message}`);
     }
   };
 
@@ -54,6 +55,11 @@ const Login = () => {
 
   return (
     <div className="py-8">
+      <Helmet>
+        <title>Login | Visa Bridge</title>
+        <meta name="description" content="Login to Visa Bridge and access exclusive travel features." />
+      </Helmet>
+
       <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl">
         <div className="text-center font-sans font-bold bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-500 bg-clip-text text-transparent pt-5 text-2xl mx-auto">
           {text}

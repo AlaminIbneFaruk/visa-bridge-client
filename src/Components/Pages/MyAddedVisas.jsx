@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import Lottie from "lottie-react";
+import noDataAnimation from "../../assets/noDataAnimation.json"; 
 
 const MyAddedVisas = () => {
   const { user } = useContext(AuthContext);
@@ -25,7 +27,14 @@ const MyAddedVisas = () => {
         My Added Visas
       </h2>
       {visas.length === 0 ? (
-        <p>No visas found.</p>
+        <div className="flex flex-col justify-center items-center min-h-[40vh]">
+          <Lottie
+            animationData={noDataAnimation} // Pass the animation JSON
+            loop={true} // Optional: loop the animation
+            style={{ width: 400, height: 400,backgroundColor:"blue", }} // Customize size
+          />
+          <div className="mt-4 text-lg">No visas added yet.</div>
+        </div>
       ) : (
         <ul className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 p-4">
           {visas.map((visa) => (
