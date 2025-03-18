@@ -27,13 +27,13 @@ const MyAddedVisas = () => {
         My Added Visas
       </h2>
       {visas.length === 0 ? (
-        <div className="flex flex-col justify-center items-center min-h-[40vh]">
+        <div className="flex flex-col justify-center items-center min-h-[40vh] border-2 border-dashed border-black p-4 rounded-lg">
           <Lottie
             animationData={noDataAnimation} // Pass the animation JSON
             loop={true} // Optional: loop the animation
-            style={{ width: 400, height: 400,backgroundColor:"blue", }} // Customize size
+            style={{ width: 400, height: 400, }} // Customize size
           />
-          <div className="mt-4 text-lg">No visas added yet.</div>
+          <div className="mt-4 text-4xl font-bold p-4">No visas added yet.</div>
         </div>
       ) : (
         <ul className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 p-4">
