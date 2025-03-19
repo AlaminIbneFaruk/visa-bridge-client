@@ -20,7 +20,7 @@ const AllVisas = () => {
         </div>
         <div className="container mx-auto py-12 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {visas.map((visa) => (
-            <div key={visa.id} className="card w-full bg-base-100 shadow-xl">
+            <div key={visa._id} className="card w-full bg-base-100 shadow-xl">
               <figure>
                 <img
                   src={visa.countryImage}
