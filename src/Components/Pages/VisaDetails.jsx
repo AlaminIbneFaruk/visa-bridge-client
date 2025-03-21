@@ -14,7 +14,7 @@ const VisaDetails = () => {
   useEffect(() => {
     const fetchVisa = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/visa/${id}`);
+        const response = await fetch(`https://sunflower-assignment-server.vercel.app/visa/${id}`);
         if (!response.ok) {
           if (response.status === 404) {
             throw new Error("Visa not found.");
@@ -32,17 +32,59 @@ const VisaDetails = () => {
     fetchVisa();
   }, [id]);
 
+  const handleVisaApplication = async () => {
+    const applicationData = {
+      visaId: id,
+      user: {
+        uid: user?.uid || "",
+        email: user?.email || "",
+        username: user?.displayName || "",
+        photo: user?.photoURL || "",
+      },
+      visaDetails: {
+        country: visa?.country,
+        visaType: visa?.visaType,
+        fee: visa?.fee,
+      },
+      applicationStatus: "pending",
+      appliedDate: new Date().toISOString(),
+    };
+
+    try {
+      const response = await fetch("https://sunflower-assignment-server.vercel.app/visaapplications", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(applicationData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.status === "success") {
+        toast.success("Application submitted successfully.", {
+          position: "top-right",
+        });
+        setIsModalOpen(false);
+      } else {
+        throw new Error(result.message || "Failed to submit application");
+      }
+    } catch (error) {
+      toast.error(`Failed to submit application: ${error.message}`, {
+        position: "top-right",
+      });
+    }
+  };
+
   if (loading)
     return <div className="flex justify-center items-center">Loading...</div>;
   if (error) return <p className="text-error font-bold">{error}</p>;
   if (!visa) return <p>No visa details available.</p>;
 
   return (
-    <div className="mx-auto p-4  rounded-lg flex">
-      <div className="bg-gradient-to-t  from-sky-500 to-white p-4 rounded-s-lg shadow-xl">
+    <div className="mx-auto p-4 rounded-lg flex">
+      <div className="bg-gradient-to-t from-sky-500 to-white p-4 rounded-s-lg shadow-xl">
         <h2 className="text-4xl font-bold mb-2 text-center">Visa Details</h2>
-
-        {/* Country Flag */}
         <div className="mb-4 flex justify-center p-2 border-2">
           <img
             src={visa?.countryImage}
@@ -66,7 +108,6 @@ const VisaDetails = () => {
               months
             </div>
           </div>
-
           <div className="stat">
             <div className="stat-title">Processing Time</div>
             <div>
@@ -76,13 +117,11 @@ const VisaDetails = () => {
               days
             </div>
           </div>
-
           <div className="stat">
             <div className="stat-title">Fee</div>
             <div className="stat-value text-info">৳{visa?.fee}</div>
           </div>
         </div>
-
         <div className="card shadow-lg bg-base-200 rounded-lg">
           <div className="card-body">
             <h2 className="card-title font-semibold">Required Documents</h2>
@@ -91,14 +130,12 @@ const VisaDetails = () => {
             </ul>
           </div>
         </div>
-
         <div className="card shadow-lg bg-base-100 rounded-lg">
           <div className="card-body">
             <h2 className="card-title font-semibold">Description</h2>
             <p>{visa?.description}</p>
           </div>
         </div>
-
         <p className="border-2 p-2 rounded-lg bg-base-200">
           <span className="font-semibold">Age Restriction:</span>{" "}
           {visa?.Age_Restriction}
@@ -134,7 +171,7 @@ const VisaDetails = () => {
                 <span className="font-semibold">Email:</span> {user?.email}
               </p>
               <p>
-                <span className="font-semibold">Name:</span> {user?.displayName}{" "}
+                <span className="font-semibold">Name:</span> {user?.displayName}
               </p>
               <p>
                 <span className="font-semibold">Applied Date:</span>{" "}
@@ -150,7 +187,10 @@ const VisaDetails = () => {
                 >
                   Cancel
                 </button>
-                <button className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700" onClick={() => toast.success("Application submitted successfully.")}>
+                <button
+                  className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+                  onClick={handleVisaApplication}
+                >
                   Apply
                 </button>
               </div>

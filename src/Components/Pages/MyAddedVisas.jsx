@@ -12,10 +12,10 @@ const MyAddedVisas = () => {
   useEffect(() => {
     if (!uid) return;
 
-    fetch("/visaInfo.json")
+    fetch(`https://sunflower-assignment-server.vercel.app/my-visas/${uid}`)
       .then((res) => res.json())
       .then((data) => {
-        const userVisas = data.filter((visa) => visa.user.uid === uid);
+        const userVisas = data.filter((visa) => visa?.user.uid === uid);
         setVisas(userVisas);
       })
       .catch((error) => console.error("Error fetching visas:", error));
@@ -39,7 +39,7 @@ const MyAddedVisas = () => {
         <ul className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 p-4">
           {visas.map((visa) => (
             <li
-              key={visa.id}
+              key={visa?.id}
               className="card w-full bg-base-100 shadow-xl p-4 rounded-md"
             >
               <img
@@ -58,18 +58,18 @@ const MyAddedVisas = () => {
               </p>
               <p
                 className={`cursor-pointer ${
-                  expandedVisa === visa.id ? "h-auto" : "h-20 overflow-hidden"
+                  expandedVisa === visa?.id ? "h-auto" : "h-20 overflow-hidden"
                 }`}
                 onClick={() =>
-                  setExpandedVisa(expandedVisa === visa.id ? null : visa.id)
+                  setExpandedVisa(expandedVisa === visa?.id ? null : visa?.id)
                 }
               >
                 <strong>Description:</strong> {visa?.description}
               </p>
-              {expandedVisa !== visa.id && (
+              {expandedVisa !== visa?.id && (
                 <button
                   className="text-blue-500 underline mt-2"
-                  onClick={() => setExpandedVisa(visa.id)}
+                  onClick={() => setExpandedVisa(visa?.id)}
                 >
                   Read More
                 </button>

@@ -3,81 +3,133 @@ import { useNavigate } from "react-router-dom";
 
 const AllVisas = () => {
   const [visas, setVisas] = useState([]);
+  const [filteredVisas, setFilteredVisas] = useState([]);
+  const [filterType, setFilterType] = useState("All");
   const navigate = useNavigate();
+
   useEffect(() => {
-    fetch("http://localhost:5000/allvisas")
+    fetch("https://sunflower-assignment-server.vercel.app/all-visas")
       .then((res) => res.json())
-      .then((data) => setVisas(data))
+      .then((data) => {
+        setVisas(data);
+        setFilteredVisas(data); 
+      })
       .catch((error) => console.error("Error fetching visas:", error));
   }, []);
 
+  // Handle filter change
+  const handleFilterChange = (type) => {
+    setFilterType(type);
+    if (type === "All") {
+      setFilteredVisas(visas);
+    } else {
+      const filtered = visas.filter((visa) => visa?.visaType === type);
+      setFilteredVisas(filtered);
+    }
+  };
+
   return (
     <>
-      
       <div className="container mx-auto">
-        <div className="bg-white py-4">
-          <h1 className="text-4xl font-bold text-center">All Visas</h1>
+        <div className="bg-white py-4 flex justify-between items-center px-4">
+          <h1 className="text-4xl font-bold">All Visas</h1>
+          <div className="dropdown dropdown-end z-10">
+            <label tabIndex={0} className="btn btn-primary m-1">
+              Filter by Type: {filterType}
+            </label>
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <button onClick={() => handleFilterChange("All")}>All</button>
+              </li>
+              <li>
+                <button onClick={() => handleFilterChange("Tourist")}>
+                  Tourist
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleFilterChange("Work")}>Work</button>
+              </li>
+              <li>
+                <button onClick={() => handleFilterChange("Student")}>
+                  Student
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleFilterChange("Transit")}>
+                  Transit
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleFilterChange("Business")}>
+                  Business
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="container mx-auto py-12 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-          {visas.map((visa) => (
-            <div key={visa._id} className="card w-full bg-base-100 shadow-xl">
+          {filteredVisas.map((visa) => (
+            <div key={visa?._id} className="card w-full bg-base-100 shadow-xl">
               <figure>
                 <img
-                  src={visa.countryImage}
-                  alt={visa.country}
+                  src={visa?.countryImage}
+                  alt={visa?.country}
                   className="w-full lg:h-48 h-96 object-cover"
                 />
               </figure>
               <div className="card-body">
                 <h2 className="card-title flex justify-between">
-                  {visa.country}
+                  {visa?.country}
                   <div
                     className={`badge ${
-                      visa.visaType === "Tourist"
+                      visa?.visaType === "Tourist"
                         ? "badge-primary"
-                        : visa.visaType === "Work"
+                        : visa?.visaType === "Work"
                         ? "badge-secondary"
                         : "badge-accent"
                     }`}
                   >
-                    {visa.visaType}
+                    {visa?.visaType}
                   </div>
                 </h2>
                 <div className="grid gap-2">
                   <div className="stat border-2">
                     <div className="stat-title">Fee</div>
-                    <div className="stat-value text-primary">৳{visa.fee}</div>
+                    <div className="stat-value text-primary">৳{visa?.fee}</div>
                   </div>
                   <div className="stat border-2">
                     <div className="stat-title">Validity</div>
-                    <div className="stat-value">{visa.validity} days</div>
+                    <div className="stat-value">{visa?.validity} months</div>
                   </div>
                   <div className="stat border-2">
                     <div className="stat-title">Processing</div>
-                    <div className="stat-value">{visa.processingTime} days</div>
+                    <div className="stat-value">{visa?.processingTime} days</div>
                   </div>
                 </div>
                 <p>
-                  <strong>Required Documents:</strong> {visa.required_documents}
+                  <strong>Required Documents:</strong> {visa?.required_documents}
                 </p>
                 <div className="card-actions justify-end">
                   <div className="badge badge-outline">
-                    {visa.Application_method}
+                    {visa?.Application_method}
                   </div>
                   <div className="badge badge-outline">
-                    {visa?.Age_Restriction?`${visa?.Age_Restriction}+ years`:"None"} 
+                    {visa?.Age_Restriction ? `${visa?.Age_Restriction}+ years` : "None"}
                   </div>
                 </div>
                 <div>
-                <button
-                className="btn btn-primary font-bold"
-                onClick={() => {
-                  navigate(`/details/${visa?._id}`);
-                }}
-              >
-                See Details
-              </button>
-                              </div>
+                  <button
+                    className="btn btn-primary font-bold"
+                    onClick={() => {
+                      navigate(`/details/${visa?._id}`);
+                    }}
+                  >
+                    See Details
+                  </button>
+                </div>
               </div>
             </div>
           ))}

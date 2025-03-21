@@ -102,7 +102,7 @@ const AddVisa = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/addvisas", {
+      const response = await fetch("https://sunflower-assignment-server.vercel.app/add-visas", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -156,7 +156,7 @@ const AddVisa = () => {
               <Cursor cursorColor="Blue" />
             </h1>
             <p className="py-6 text-xl font-bold">
-              Fill in the details below to add a new visa.
+              Fill in the details below to add a new visa?.
             </p>
           </div>
           <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
@@ -306,7 +306,7 @@ const AddVisa = () => {
                 <input
                   type="text"
                   name="validity"
-                  placeholder="e.g., 90 days"
+                  placeholder="e.g., 90 months"
                   className="input input-bordered"
                   value={visaDetails.validity}
                   onChange={handleChange}
