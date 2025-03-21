@@ -58,7 +58,7 @@ Visa Bridge is a web application designed to simplify the process of understandi
 <hr/>
 
 ### Live Link:
-🔗 [Visa Navigator App](https://visanavigatorapp.netlify.app/)
+🔗 [Visa Navigator App](https://visabridge2.netlify.app/)
 
 <hr/>
 
