@@ -63,5 +63,5 @@ Visa Bridge is a web application designed to simplify the process of understandi
 <hr/>
 
 ### GitHub Repository Link:
-📂 [Visa Navigator GitHub Repo](https://github.com/your-username/visa-bridge)
+📂 [Visa Navigator GitHub Repo](https://github.com/programming-hero-web-course2/b10-a10-client-side-AlaminIbneFaruk/)
 
