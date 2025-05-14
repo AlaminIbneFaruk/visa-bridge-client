@@ -11,7 +11,10 @@ import Register from "../Components/Pages/Register.jsx";
 import ErrorPage from "../Components/Pages/ErrorPage.jsx";
 import Layout from "../Components/Layout.jsx";
 import PrivateRoutes from "./PrivateRoutes.jsx";
-
+import ContactUs from "../Components/Pages/ContactUs.jsx";
+import Tourist from "../Components/Pages/Tourist.jsx";
+import Student from "../Components/Pages/Student.jsx";
+import Work from "../Components/Pages/Work.jsx";
 const Routes = createBrowserRouter([
   {
     path: "/",
@@ -56,6 +59,22 @@ const Routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs />,
+      },
+      {
+        path: "/tourist-visa",
+        element: <Tourist />,
+      },
+      {
+        path: "/student-visa",
+        element: <Student />,
+      },
+      {
+        path: "/Work-visa",
+        element: <Work />,
       },
     ],
     

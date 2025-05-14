@@ -1,238 +1,57 @@
-import { Fade } from "react-awesome-reveal";
+import { motion } from "framer-motion";
+import SectionContent from "./SectionContent";
 
 const Ext2 = () => {
   return (
-    <div className="flex flex-col justify-center gap-10 mt-12">
-      <div className="card bg-sky-600 shadow-xl w-full">
-        <div className="card-body justify-center items-center text-center">
-          <Fade>
-            <h2 className="card-title text-white text-3xl">
-              Visa Requirements Overview
-            </h2>
-          </Fade>
-          <Fade>
-            <p className="text-white text-lg mt-4">
-              Understanding visa requirements is essential for a smooth
-              application process. Learn about the necessary documents,
-              eligibility criteria, and additional steps based on your
-              destination.
-            </p>
-          </Fade>
+    <div className="flex flex-col justify-center gap-10 pb-4">
+      <div className="w-full">
+        <div className="justify-center items-center text-center">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <SectionContent
+              subtitle="Visa Requirements"
+              title="Essential Documents for Visa Application"
+              description={`              Understanding visa requirements is essential for a smooth application process. Learn about the necessary documents, eligibility criteria, and additional steps based on your destination.`}
+            />
+            <p className="text-white text-lg mt-4"></p>
+          </motion.div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-8">
-        <Fade>
-          <div
-            className="card bg-sky-600
- shadow-xl"
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 justify-center gap-4 p-2">
+        {[
+          "Valid Passport",
+          "Passport-Sized Photos",
+          "Visa Application Form",
+          "Proof of Financial Stability",
+          "Travel Itinerary",
+          "Proof of Purpose",
+          "Travel Insurance",
+          "Proof of Residence",
+          "Criminal Background Check",
+          "Health Certificates",
+          "Letter of Consent",
+          "Visa Fee Payment Receipt",
+          "Previous Visas",
+          "Additional Documents",
+        ].map((item, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="card bg-sky-600 shadow-xl"
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">
-                1. Valid Passport
+                {index + 1}. {item}
               </h2>
-              <p className="text-white text-center">
-                Ensure it has at least 6 months of validity and blank pages for
-                visa stamps.
-              </p>
+              <p className="text-white text-center">Description for {item}</p>
             </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div
-            className="card bg-sky-600
- shadow-xl "
-          >
-            <div className="card-body items-center">
-              <h2 className="card-title text-white text-center">
-                2. Passport-Sized Photos
-              </h2>
-              <p className="text-white text-center">
-                Recent photographs meeting size and background requirements.
-              </p>
-            </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div
-            className="card bg-sky-600
- shadow-xl "
-          >
-            <div className="card-body items-center">
-              <h2 className="card-title text-white text-center">
-                3. Visa Application Form
-              </h2>
-              <p className="text-white text-center">
-                Complete the official visa application form online or offline.
-              </p>
-            </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div
-            className="card bg-sky-600
- shadow-xl "
-          >
-            <div className="card-body items-center">
-              <h2 className="card-title text-white text-center">
-                4. Proof of Financial Stability
-              </h2>
-              <p className="text-white text-center">
-                Provide bank statements, pay stubs, or sponsorship letters.
-              </p>
-            </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div
-            className="card bg-sky-600
- shadow-xl "
-          >
-            <div className="card-body items-center">
-              <h2 className="card-title text-white text-center">
-                5. Travel Itinerary
-              </h2>
-              <p className="text-white text-center">
-                Confirmed flight bookings and hotel reservations.
-              </p>
-            </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div
-            className="card bg-sky-600
- shadow-xl "
-          >
-            <div className="card-body items-center">
-              <h2 className="card-title text-white text-center">
-                6. Proof of Purpose
-              </h2>
-              <p className="text-white text-center">
-                Invitation letters, event details, or job offers.
-              </p>
-            </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div
-            className="card bg-sky-600
- shadow-xl "
-          >
-            <div className="card-body items-center">
-              <h2 className="card-title text-white text-center">
-                7. Travel Insurance
-              </h2>
-              <p className="text-white text-center">
-                Coverage for medical emergencies and unexpected events.
-              </p>
-            </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div
-            className="card bg-sky-600
- shadow-xl "
-          >
-            <div className="card-body items-center">
-              <h2 className="card-title text-white text-center">
-                8. Proof of Residence
-              </h2>
-              <p className="text-white text-center">
-                Provide a utility bill, lease agreement, or similar evidence.
-              </p>
-            </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div
-            className="card bg-sky-600
- shadow-xl "
-          >
-            <div className="card-body items-center">
-              <h2 className="card-title text-white text-center">
-                9. Criminal Background Check
-              </h2>
-              <p className="text-white text-center">
-                Provide a police clearance certificate if required.
-              </p>
-            </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div
-            className="card bg-sky-600
- shadow-xl "
-          >
-            <div className="card-body items-center">
-              <h2 className="card-title text-white text-center">
-                10. Health Certificates
-              </h2>
-              <p className="text-white text-center">
-                Vaccination records or medical fitness certificates.
-              </p>
-            </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div
-            className="card bg-sky-600
- shadow-xl "
-          >
-            <div className="card-body items-center">
-              <h2 className="card-title text-white text-center">
-                11. Letter of Consent
-              </h2>
-              <p className="text-white text-center">
-                Notarized consent letter for minors traveling without guardians.
-              </p>
-            </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div
-            className="card bg-sky-600
- shadow-xl "
-          >
-            <div className="card-body items-center">
-              <h2 className="card-title text-white text-center">
-                12. Visa Fee Payment Receipt
-              </h2>
-              <p className="text-white text-center">
-                Proof of payment for the visa application fee.
-              </p>
-            </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div
-            className="card bg-sky-600
- shadow-xl "
-          >
-            <div className="card-body items-center">
-              <h2 className="card-title text-white text-center">
-                13. Previous Visas
-              </h2>
-              <p className="text-white text-center">
-                Copies of old visas for the destination or other countries.
-              </p>
-            </div>
-          </div>
-        </Fade>
-        <Fade>
-          <div
-            className="card bg-sky-600
- shadow-xl "
-          >
-            <div className="card-body items-center">
-              <h2 className="card-title text-white text-center">
-                14. Additional Documents
-              </h2>
-              <p className="text-white text-center">
-                Marriage certificates, birth certificates, or property
-                documents.
-              </p>
-            </div>
-          </div>
-        </Fade>
+          </motion.div>
+        ))}
       </div>
     </div>
   );

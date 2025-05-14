@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar bg-gradient-to-l from-indigo-500 via-sky-400 to-white">
+      <div className="navbar px-8 mx-auto sticky z-50 top-0 bg-gradient-to-tr from-blue-500 via-sky-400 to-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,23 +37,33 @@ const Navbar = () => {
                 <Link to="/all-visas">All Visas</Link>
               </li>
               <li>
-                <Link to="/add-visa">Add Visa</Link>
+                <Link to="/contact-us">Contact Us</Link>
               </li>
-              <li>
-                <Link to={`/my-added-visas/${user?.uid}`}>My Added Visas</Link>
-              </li>
-              <li>
-                <Link to={`/my-visa-applications/${user?.uid}`}>
-                  My Visa Applications
-                </Link>
-              </li>
+
+              {user && (
+                <>
+                  <li>
+                    <Link to="/add-visa">Add Visa</Link>
+                  </li>
+                  <li>
+                    <Link to={`/my-added-visas/${user?.uid}`}>
+                      My Added Visas
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={`/my-visa-applications/${user?.uid}`}>
+                      My Visa Applications
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
           <Link
             to="/"
-            className="btn btn-ghost text-xl font-sans font-bold bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-500 bg-clip-text text-transparent"
+            className="btn btn-ghost"
           >
-            <img src="/VisaBridge.jpg" alt="VisaBridge" className="h-full"/>
+            <img src="/VisaBridge.jpg" alt="VisaBridge" className="h-full" />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -63,6 +73,9 @@ const Navbar = () => {
             </li>
             <li>
               <Link to="/all-visas">All Visas</Link>
+            </li>
+            <li>
+              <Link to="/contact-us">Contact Us</Link>
             </li>
             {user && (
               <>
@@ -89,15 +102,18 @@ const Navbar = () => {
               <Link to="/login" className="btn">
                 Login
               </Link>
-              <Link to="/register" className="btn btn-primary border border-black text-white">
+              <Link
+                to="/register"
+                className="btn btn-primary border border-black text-white"
+              >
                 Register
               </Link>
             </div>
           ) : (
             <div className="flex items-center gap-2">
-              <div className="flex items-center gap-2 bg-gradient-to-r from-blue-300 via-sky-200 to-blue-300 px-3 py-1 rounded-full">
+              <div className="flex items-center btn-circle btn btn-info">
                 {user.photoURL && (
-                  <div className="relative group">
+                  <div className="relative group z-20">
                     <img
                       src={user?.photoURL}
                       alt={user?.displayName || "User"}
