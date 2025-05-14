@@ -1,73 +1,93 @@
-import { Helmet } from "react-helmet";
-
+import { useState } from "react";
+import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toast.info("Sending..."); // Toast notification for sending status
+
+    emailjs
+      .send(
+        "service_92746yasin",
+        "template_q6hew1k",
+        formData,
+        "k2RPSI748p9JuDy2x"
+      )
+      .then(() => {
+        toast.success("Message sent successfully!"); // Success notification
+      })
+      .catch(() => {
+        toast.error("Failed to send message. Try again later."); // Error notification
+      });
+  };
+
   return (
-    <>
-      <Helmet>
-        <title>Contact Us | Visa Bridge</title>
-        <meta
-          name="description"
-          content="Get in touch with us for any inquiries or support."
-        />
-      </Helmet>
-      <div className="container mx-auto py-12">
-        <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
-        <p>
-          If you have any questions or need assistance, feel free to reach out
-          to us!
-        </p>
-        <form className="mt-6">
-          <div className="mb-4">
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              rows="4"
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50"
-              required
-            ></textarea>
-          </div>
+    <div className="relative backdrop-blur-lg rounded-lg p-8 md:p-10 space-y-6 shadow-lg">
+      <div className="max-w-lg mx-auto border-4 border-sky-400 bg-white/80 backdrop-blur-lg rounded-lg p-8 md:p-10 space-y-6 shadow-lg">
+        <h2
+          className="text-center font-extrabold text-4xl md:text-4xl p-4 uppercase "
+        >
+          Contact Us
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full p-2 border rounded bg-white/70 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full p-2 border rounded bg-white/70 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            className="w-full p-2 border rounded bg-white/70 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
           <button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded-md"
+            className="w-full btn btn-info text-white font-semibold py-2 rounded  focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            Send Message
+            Send
           </button>
         </form>
+        {status && (
+          <p
+            className={`mt-4 ${
+              status.includes("successfully")
+                ? "text-green-500"
+                : "text-red-500"
+            }`}
+          >
+            {status}
+          </p>
+        )}
       </div>
-    </>
+    </div>
   );
 };
+
 export default ContactUs;
