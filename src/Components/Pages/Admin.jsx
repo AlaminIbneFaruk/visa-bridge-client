@@ -1,46 +1,57 @@
 
 import { Link, Outlet } from "react-router-dom";
 
-const DashboardLayout = () => {
-  
+const Admin = () => {
+
+
   return (
     <div className="flex min-h-screen">
       <aside className="w-64 bg-gray-800 text-white p-4">
-        <h2 className="text-2xl font-semibold mb-6">Dashboard</h2>
+        <h2 className="text-2xl font-semibold mb-6">Admin Dashboard</h2>
         <nav className="space-y-2">
           <Link
-            to="/dashboard"
+            to="/admin"
             className="block py-2 px-4 rounded hover:bg-gray-700"
           >
             Home
           </Link>
           <Link
-            to="/dashboard/bookings"
+            to="/admin/users"
             className="block py-2 px-4 rounded hover:bg-gray-700"
           >
-            My Bookings
+            Manage Users
           </Link>
           <Link
-            to="/dashboard/profile"
+            to="/admin/guides"
             className="block py-2 px-4 rounded hover:bg-gray-700"
           >
-            My Profile
+            Manage Guides
           </Link>
           <Link
-            to="/dashboard/stories"
+            to="/admin/packages"
             className="block py-2 px-4 rounded hover:bg-gray-700"
           >
-            My Stories
+            Manage Packages
           </Link>
-        
+          <Link
+            to="/admin/analytics"
+            className="block py-2 px-4 rounded hover:bg-gray-700"
+          >
+            View Analytics
+          </Link>
+          <Link
+            to="/admin/applications"
+            className="block py-2 px-4 rounded hover:bg-gray-700"
+          >
+            Guide Applications
+          </Link>
         </nav>
       </aside>
-
-      <div className="flex-1 p-4">
+      <div>
         <Outlet />
       </div>
     </div>
   );
 };
 
-export default DashboardLayout;
+export default Admin;

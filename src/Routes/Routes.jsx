@@ -15,6 +15,19 @@ import ContactUs from "../Components/Pages/ContactUs.jsx";
 import Tourist from "../Components/Pages/Tourist.jsx";
 import Student from "../Components/Pages/Student.jsx";
 import Work from "../Components/Pages/Work.jsx";
+import Admin from "../Components/Pages/Admin.jsx";
+import Users from "../Components/Pages/Users.jsx";
+import Guides from "../Components/Pages/Guides.jsx";
+import Packages from "../Components/Pages/Packages.jsx";
+import Analytics from "../Components/Pages/Analytics.jsx";
+import Applications from "../Components/Pages/Applications.jsx";
+import AdminHome from "../Components/Pages/AdminHome.jsx";
+import DashboardHome from "../Components/Pages/DashboardHome.jsx";
+import DashboardBookings from "../Components/Pages/DashboardBookings.jsx";
+import DashboardProfile from "../Components/Pages/DashboardProfile.jsx";
+import DashboardComments from "../Components/Pages/DashboardComments.jsx";
+
+import DashboardLayout from "../Components/DashboardLayout.jsx";
 const Routes = createBrowserRouter([
   {
     path: "/",
@@ -34,23 +47,87 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/add-visa",
-        element: <PrivateRoutes>
-          <AddVisa />
-        </PrivateRoutes>
-        ,
+        element: (
+          <PrivateRoutes>
+            <AddVisa />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/dashboard",
+        element: (
+          <PrivateRoutes>
+            <DashboardLayout />
+          </PrivateRoutes>
+        ),
+        children: [
+          {
+            path: "/",
+            element: <DashboardHome></DashboardHome>,
+          },
+          {
+            path: "/bookings",
+            element: <DashboardBookings></DashboardBookings>,
+          },
+          {
+            path: "/profile",
+            element: <DashboardProfile></DashboardProfile>,
+          },
+          {
+            path: "/comments",
+            element: <DashboardComments></DashboardComments>,
+          },
+        ],
       },
       {
         path: "/my-added-visas/:uid",
-        element: <PrivateRoutes>
+        element: (
+          <PrivateRoutes>
             <MyAddedVisas />
-        </PrivateRoutes>
-        ,
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/admin",
+        element: (
+          <PrivateRoutes>
+            <Admin />
+          </PrivateRoutes>
+        ),
+        children: [
+          {
+            path: "/admin/users",
+            element: <Users></Users>,
+          },
+          {
+            path: "/admin",
+            element: <AdminHome></AdminHome>,
+          },
+          {
+            path: "/admin/guides",
+            element: <Guides></Guides>,
+          },
+          {
+            path: "/admin/packages",
+            element: <Packages></Packages>,
+          },
+          {
+            path: "/admin/analytics",
+            element: <Analytics></Analytics>,
+          },
+          {
+            path: "/admin/applications",
+            element: <Applications></Applications>,
+          },
+        ],
       },
       {
         path: "/my-visa-applications/:uid",
-        element: <PrivateRoutes>
+        element: (
+          <PrivateRoutes>
             <MyVisaApplications />
-        </PrivateRoutes>,
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/login",
@@ -77,11 +154,11 @@ const Routes = createBrowserRouter([
         element: <Work />,
       },
     ],
-    
-  },{
-    path:"*",
-    element:<ErrorPage/>
-  }
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
+  },
 ]);
 
 export default Routes;
