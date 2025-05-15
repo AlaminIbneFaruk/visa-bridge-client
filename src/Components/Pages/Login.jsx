@@ -18,15 +18,18 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log("You pressed Login!", "Email:", email, "Password:", password);
-
     try {
       const userCredential = await signInUser(email, password);
-      console.log("User:", userCredential.user);
+      const userEmail = userCredential.user.email;
       toast.success("Logged in successfully!");
       form.reset();
+
       setTimeout(() => {
-        navigate("/");
+        if (userEmail === "hridoy@example.com") {
+          navigate("/admin");
+        } else {
+          navigate("/dashboard");
+        }
       }, 2000);
     } catch (error) {
       console.error("Error:", error.message);
@@ -37,10 +40,15 @@ const Login = () => {
   const handleGoogle = async () => {
     try {
       const result = await signInGoogle();
-      console.log(result.user);
+      const userEmail = result.user.email;
       toast.success("Logged in Successfully with Google!");
+
       setTimeout(() => {
-        navigate("/");
+        if (userEmail === "hridoy@example.com") {
+          navigate("/admin");
+        } else {
+          navigate("/dashboard");
+        }
       }, 2000);
     } catch (error) {
       console.error(error.message);
