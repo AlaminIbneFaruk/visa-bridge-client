@@ -28,25 +28,17 @@ import DashboardProfile from "../Components/Pages/DashboardProfile.jsx";
 import DashboardComments from "../Components/Pages/DashboardComments.jsx";
 
 import DashboardLayout from "../Components/DashboardLayout.jsx";
+
 const Routes = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
+      { path: "", element: <Home /> },
+      { path: "details/:id", element: <VisaDetails /> },
+      { path: "all-visas", element: <AllVisas /> },
       {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/details/:id",
-        element: <VisaDetails />,
-      },
-      {
-        path: "/all-visas",
-        element: <AllVisas />,
-      },
-      {
-        path: "/add-visa",
+        path: "add-visa",
         element: (
           <PrivateRoutes>
             <AddVisa />
@@ -54,33 +46,21 @@ const Routes = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard",
+        path: "dashboard",
         element: (
           <PrivateRoutes>
             <DashboardLayout />
           </PrivateRoutes>
         ),
         children: [
-          {
-            path: "/",
-            element: <DashboardHome></DashboardHome>,
-          },
-          {
-            path: "/bookings",
-            element: <DashboardBookings></DashboardBookings>,
-          },
-          {
-            path: "/profile",
-            element: <DashboardProfile></DashboardProfile>,
-          },
-          {
-            path: "/comments",
-            element: <DashboardComments></DashboardComments>,
-          },
+          { path: "", element: <DashboardHome /> },
+          { path: "bookings", element: <DashboardBookings /> },
+          { path: "profile", element: <DashboardProfile /> },
+          { path: "comments", element: <DashboardComments /> },
         ],
       },
       {
-        path: "/my-added-visas/:uid",
+        path: "my-added-visas/:uid",
         element: (
           <PrivateRoutes>
             <MyAddedVisas />
@@ -88,77 +68,38 @@ const Routes = createBrowserRouter([
         ),
       },
       {
-        path: "/admin",
+        path: "admin",
         element: (
           <PrivateRoutes>
             <Admin />
           </PrivateRoutes>
         ),
         children: [
-          {
-            path: "/admin/users",
-            element: <Users></Users>,
-          },
-          {
-            path: "/admin",
-            element: <AdminHome></AdminHome>,
-          },
-          {
-            path: "/admin/guides",
-            element: <Guides></Guides>,
-          },
-          {
-            path: "/admin/packages",
-            element: <Packages></Packages>,
-          },
-          {
-            path: "/admin/analytics",
-            element: <Analytics></Analytics>,
-          },
-          {
-            path: "/admin/applications",
-            element: <Applications></Applications>,
-          },
+          { path: "", element: <AdminHome /> },        // Admin landing page
+          { path: "users", element: <Users /> },
+          { path: "guides", element: <Guides /> },
+          { path: "packages", element: <Packages /> },
+          { path: "analytics", element: <Analytics /> },
+          { path: "applications", element: <Applications /> },
         ],
       },
       {
-        path: "/my-visa-applications/:uid",
+        path: "my-visa-applications/:uid",
         element: (
           <PrivateRoutes>
             <MyVisaApplications />
           </PrivateRoutes>
         ),
       },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
-      },
-      {
-        path: "/contact-us",
-        element: <ContactUs />,
-      },
-      {
-        path: "/tourist-visa",
-        element: <Tourist />,
-      },
-      {
-        path: "/student-visa",
-        element: <Student />,
-      },
-      {
-        path: "/Work-visa",
-        element: <Work />,
-      },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
+      { path: "contact-us", element: <ContactUs /> },
+      { path: "tourist-visa", element: <Tourist /> },
+      { path: "student-visa", element: <Student /> },
+      { path: "work-visa", element: <Work /> }, // lowercase consistent path
     ],
   },
-  {
-    path: "*",
-    element: <ErrorPage />,
-  },
+  { path: "*", element: <ErrorPage /> },
 ]);
 
 export default Routes;

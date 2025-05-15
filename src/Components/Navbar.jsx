@@ -59,10 +59,7 @@ const Navbar = () => {
               )}
             </ul>
           </div>
-          <Link
-            to="/"
-            className="btn btn-ghost"
-          >
+          <Link to="/" className="btn btn-ghost">
             <img src="/VisaBridge.jpg" alt="VisaBridge" className="h-full" />
           </Link>
         </div>
@@ -111,6 +108,21 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="flex items-center gap-2">
+              {/* Conditional Admin/Dashboard Link */}
+              <Link
+                to={
+                  user.email === "alaminibnefarukayon@gmail.com"
+                    ? "/admin"
+                    : "/dashboard"
+                }
+                className="btn btn-secondary"
+              >
+                {user.email === "alaminibnefarukayon@gmail.com"
+                  ? "Admin"
+                  : "Dashboard"}
+              </Link>
+
+              {/* User Avatar */}
               <div className="flex items-center btn-circle btn btn-info">
                 {user.photoURL && (
                   <div className="relative group z-20">
@@ -129,6 +141,8 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
+
+              {/* Log Out Button */}
               <button className="btn" onClick={signOutUser}>
                 Log Out
               </button>
