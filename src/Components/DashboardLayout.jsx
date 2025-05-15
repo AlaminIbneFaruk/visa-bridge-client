@@ -27,10 +27,10 @@ const DashboardLayout = () => {
             My Profile
           </Link>
           <Link
-            to="/dashboard/stories"
+            to="/dashboard/comments"
             className="block py-2 px-4 rounded hover:bg-gray-700"
           >
-            My Stories
+            My Comments
           </Link>
         
         </nav>
