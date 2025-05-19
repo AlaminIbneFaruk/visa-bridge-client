@@ -16,7 +16,7 @@ export default {
   daisyui: {
     themes: [{light: {
           primary: "#2563eb",       // Blue shade for light mode
-          secondary: "#d97706",     // Amber shade for light mode
+          secondary: "#2500eb",     //  Blue light mode
           accent: "#14b8a6",        // Teal for accent
           neutral: "#f3f4f6",      // Light gray background
           neutralText:"#1f2937",       
