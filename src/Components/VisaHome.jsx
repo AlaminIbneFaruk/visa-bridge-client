@@ -47,7 +47,7 @@ const VisaHome = () => {
     : placeholderVisas;
 
   return (
-    <div className="px-8">
+    <div className="px-4 md:px-8">
       <div>
         <h2 className="text-center">
           <SectionContent
@@ -57,53 +57,40 @@ const VisaHome = () => {
           />
         </h2>
       </div>
-      <div className="container grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto py-12">
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-8">
         {visasToRender.map((visa, idx) => (
           <div
-            className="card w-full bg-base-100 shadow-lg shadow-neutral-content lg:p-0 p-5"
+            className="card w-full bg-base-100 shadow-lg rounded-xl overflow-hidden transform transition-all hover:scale-105"
             key={visa?._id || idx}
           >
-            <figure>
+            <figure className="w-full h-48">
               <img
                 src={visa?.countryImage || "https://via.placeholder.com/150"}
                 alt={visa?.country}
-                className="w-full h-full lg:h-48 object-cover"
+                className="object-cover w-full h-full"
               />
             </figure>
-            <div className="card-body">
-              <h2 className="card-title">
+            <div className="p-4">
+              <h2 className="text-xl font-bold">
                 {visa?.country}
-                <div className="badge badge-accent">{visa?.visaType}</div>
+                <span className="badge badge-accent ml-2">{visa?.visaType}</span>
               </h2>
-
-              <div className="stat px-2 min-w-[100px]">
-                <div className="stat-value text-primary">৳{visa?.fee}</div>
+              <p className="text-lg text-primary my-2">৳{visa?.fee}</p>
+              <div className="flex justify-between mb-2">
+                <span>Validity: {visa?.validity} months</span>
+                <span>Processing: {visa?.processingTime} days</span>
               </div>
-              <div className="flex ">
-                <div className="stat px-2 min-w-[100px] border-r-2">
-                  <div className="stat-title text-base">Validity</div>
-                  <div className="stat-value text-base">{visa?.validity} months</div>
-                </div>
-                <div className="stat px-2 min-w-[100px]">
-                  <div className="stat-title text-base">Processing</div>
-                  <div className="stat-value text-base">{visa?.processingTime} days</div>
-                </div>
+              <div className="flex justify-end">
+                <span className="badge badge-outline">
+                  {visa?.Age_Restriction || "None"}
+                </span>
               </div>
-              <div className="card-actions justify-end">
-                <div className="badge badge-outline">
-                  {visa?.Age_Restriction
-                    ? `${visa?.Age_Restriction} years`
-                    : "None"}
-                </div>
-              </div>
-              <div>
-                <button
-                  className="btn btn-info text-white font-bold"
-                  onClick={() => navigate(`/details/${visa?._id}`)}
-                >
-                  See Details
-                </button>
-              </div>
+              <button
+                className="btn btn-info w-full text-white mt-3"
+                onClick={() => navigate(`/details/${visa?._id}`)}
+              >
+                See Details
+              </button>
             </div>
           </div>
         ))}

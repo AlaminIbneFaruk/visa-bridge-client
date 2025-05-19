@@ -60,7 +60,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-56 text-neutral-content"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-56 text-white"
           >
             {baseLinks.map(({ to, label }) => (
               <li key={label}>
@@ -102,16 +102,16 @@ const Navbar = () => {
         </div>
 
         {/* Logo */}
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
+        <Link to="/" className="btn normal-case text-xl">
           <img src="/VisaBridge.jpg" alt="VisaBridge" className="h-10" />
         </Link>
       </div>
       {/* Center Menu */}
-      <div className="navbar-center hidden lg:flex text-base-100">
+      <div className="navbar-center hidden lg:flex ">
         <ul className="menu menu-horizontal font-bold gap-0.5">
           {[...baseLinks, ...userLinks].map(({ to, label }) => (
             <li key={label}>
-              <Link to={to} className="visited:text-blue-800">
+              <Link to={to} className="text-blue-800">
                 {label}
               </Link>
             </li>
@@ -152,7 +152,7 @@ const Navbar = () => {
                       (e.target.src = "https://via.placeholder.com/32")
                     }
                   />
-                  <div className="absolute left-1/2 -translate-x-1/2 -bottom-10 bg-sky-800 text-base-100 text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                  <div className="absolute left-1/2 -translate-x-1/2 -bottom-10 bg-sky-800 text-black text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
                     {user.displayName}
                     <div className="absolute left-1/2 -translate-x-1/2 -top-1 h-2 w-2 bg-sky-800 rotate-45"></div>
                   </div>
