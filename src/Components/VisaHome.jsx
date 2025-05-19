@@ -98,7 +98,7 @@ const VisaHome = () => {
               </div>
               <div>
                 <button
-                  className="btn btn-info font-bold"
+                  className="btn btn-info text-white font-bold"
                   onClick={() => navigate(`/details/${visa?._id}`)}
                 >
                   See Details

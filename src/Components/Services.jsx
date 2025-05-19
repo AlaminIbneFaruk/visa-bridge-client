@@ -12,7 +12,7 @@ const Services = () => {
             <h2 className="card-title">Tourist Visa Assistance</h2>
             <p>Get help with your tourist visa application, documentation, and processing.</p>
             <div className="card-actions justify-end">
-              <Link to="/tourist-visa" className="btn btn-info">Learn More</Link>
+              <Link to="/tourist-visa" className="btn btn-info text-white">Learn More</Link>
             </div>
           </div>
         </div>
@@ -23,7 +23,7 @@ const Services = () => {
             <h2 className="card-title">Work Visa Processing</h2>
             <p>Streamlined process for obtaining work visas for various countries.</p>
             <div className="card-actions justify-end">
-              <Link to="/work-visa" className="btn btn-info">Learn More</Link>
+              <Link to="/work-visa" className="btn btn-info text-white">Learn More</Link>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@ const Services = () => {
             <h2 className="card-title">Student Visa Guidance</h2>
             <p>Expert support with student visa applications and interview preparation.</p>
             <div className="card-actions justify-end">
-              <Link to="/student-visa" className="btn btn-info">Learn More</Link>
+              <Link to="/student-visa" className="btn btn-info text-white">Learn More</Link>
             </div>
           </div>
         </div>
