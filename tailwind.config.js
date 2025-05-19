@@ -19,7 +19,7 @@ export default {
           neutral: "#f3f4f6",      // Light gray background
           neutralText:"#1f2937",       
           "base-100":"#ffffff",    
-          "primary-content": "#ffffff",
+          "primary-content": "#f3f4f6",
         },
         dark: {
           primary: "#1d4ed8",       // Dark blue for dark mode
@@ -28,7 +28,7 @@ export default {
           neutral: "#1f2937",       // Dark gray background
           neutralText:"#f3f4f6",
           "base-100":"#000000",        
-          "primary-content": "#000000",
+          "primary-content": "#1f2937",
         },}], // Enables both light and dark themes
   },
 }

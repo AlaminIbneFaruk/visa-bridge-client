@@ -34,7 +34,7 @@ const visaDenialReasons = [
 
 const VisaDenial = () => {
   return (
-    <section className="py-8 px-4 text-base-content">
+    <section className="py-8 px-4 border-2 text-base-content">
       <div className="max-w-4xl mx-auto">
         <SectionContent
           title="Reasons For Denial Of A Visa"
@@ -47,7 +47,7 @@ const VisaDenial = () => {
           {visaDenialReasons.map((reason, index) => (
             <div
               key={index}
-              className="collapse collapse-arrow border border-base-300 bg-base-200 rounded-box mb-4"
+              className="collapse collapse-arrow border border-neutral-content bg-base-200 rounded-box mb-4"
             >
               <input
                 type="checkbox"
@@ -71,7 +71,7 @@ const VisaDenial = () => {
         </div>
 
         <div className="text-center mt-6">
-          <Link to="/contact-us" className="btn btn-primary hover:bg-primary-focus">
+          <Link to="/contact-us" className="btn text-neutral-content btn-info hover:bg-primary-focus">
             Contact Us for Assistance
           </Link>
         </div>

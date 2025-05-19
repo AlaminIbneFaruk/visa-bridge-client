@@ -84,8 +84,8 @@ const Register = () => {
             </label>
           </div>
           <div className="form-control mt-2 gap-5">
-            <button type="submit" className="btn text-primary btn-primary glass hover:text-neutral">Register</button>
-            <Link to="/login" className="btn btn-primary btn-outline text-white glass">Already have an account? Login</Link>
+            <button type="submit" className="btn text-primary btn-info glass hover:text-neutral">Register</button>
+            <Link to="/login" className="btn btn-info btn-outline text-white glass">Already have an account? Login</Link>
           </div>
         </form>
       </div>

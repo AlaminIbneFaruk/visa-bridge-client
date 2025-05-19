@@ -32,7 +32,7 @@ const Applications = () => {
                   <span className={`badge ${app.status === 'Approved' ? 'badge-success' : app.status === 'Rejected' ? 'badge-error' : 'badge-warning'}`}>{app.status}</span>
                 </td>
                 <td>
-                  <button className="btn btn-xs btn-primary mr-2">Approve</button>
+                  <button className="btn btn-xs btn-info mr-2">Approve</button>
                   <button className="btn btn-xs btn-error">Reject</button>
                 </td>
               </motion.tr>

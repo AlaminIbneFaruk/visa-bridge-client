@@ -37,7 +37,7 @@ const VisaConsulting = () => {
             <span className="text-center">Quick & Easy Process</span>
           </div>
         </div>
-            <button className="btn mt-4 ml-8 btn-wide max-w-xl mx-auto py-2 bg-primary text-white hover:bg-blue-700">
+            <button className="btn mt-4 ml-8 btn-wide max-w-xl mx-auto py-2 text-neutral btn-info hover:bg-blue-700">
               Read More
             </button>
       </div>

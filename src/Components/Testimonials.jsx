@@ -52,7 +52,7 @@ export default function Testimonials() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0, scale: isActive ? 1.02 : 0.6 }}
                 transition={{ duration: 0.5 }}
-                className={`bg-base-100 p-4 rounded-2xl mb-12 flex flex-col items-center mx-4 mt-4 lg:h-[24vh] ${
+                className={`card shadow-lg shadow-neutral-content bg-neutral-content text-neutral p-4 rounded-2xl mb-12 flex flex-col items-center mx-4 mt-4 lg:h-[24vh] ${
                   isActive ? "scale-125" : "scale-90"
                 }`}
               >

@@ -103,7 +103,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="register"
-                className="btn btn-primary border border-black text-white"
+                className="btn btn-info border border-black text-white"
               >
                 Register
               </Link>

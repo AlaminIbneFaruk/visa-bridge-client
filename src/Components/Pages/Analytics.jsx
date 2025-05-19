@@ -18,7 +18,7 @@ const Analytics = () => {
         initial={{ opacity: 0, y: -20 }} 
         animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.5 }}
-        className="card bg-base-200 shadow-xl p-4">
+        className="card bg-base-200 shadow-lg shadow-neutral-content p-4">
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" />

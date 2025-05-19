@@ -50,7 +50,7 @@ const AllVisas = () => {
           <h1 className="text-4xl font-bold">All Visas</h1>
           <div className="flex gap-4">
             <div className="dropdown dropdown-end z-10">
-              <label tabIndex={0} className="btn btn-primary m-1">
+              <label tabIndex={0} className="btn btn-info m-1">
                 Filter by Type: {filterType}
               </label>
               <ul
@@ -117,7 +117,10 @@ const AllVisas = () => {
         </div>
         <div className="container mx-auto py-12 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {filteredVisas.map((visa) => (
-            <div key={visa?._id} className="card w-full bg-base-100 shadow-xl">
+            <div
+              key={visa?._id}
+              className="card w-full bg-base-100 shadow-lg shadow-neutral-content"
+            >
               <figure>
                 <img
                   src={visa?.countryImage}
@@ -140,24 +143,24 @@ const AllVisas = () => {
                     {visa?.visaType}
                   </div>
                 </h2>
-                <div className="stat border-2">
+
+                <div className="stat border-2 ">
                   <div className="stat-title">Fee</div>
                   <div className="stat-value text-primary">৳{visa?.fee}</div>
                 </div>
                 <div className="flex">
                   <div className="stat border-2">
-                    <div className="stat-title text-base">Validity</div>
                     <div className="stat-value text-base">
                       {visa?.validity} months
                     </div>
                   </div>
                   <div className="stat border-2">
-                    <div className="stat-title text-base">Processing</div>
                     <div className="stat-value text-base">
                       {visa?.processingTime} days
                     </div>
                   </div>
                 </div>
+
                 <p>
                   <strong>Required Documents:</strong>{" "}
                   {visa?.required_documents}
@@ -173,7 +176,7 @@ const AllVisas = () => {
                   </div>
                 </div>
                 <button
-                  className="btn btn-primary font-bold"
+                  className="btn btn-info font-bold"
                   onClick={() => navigate(`/details/${visa?._id}`)}
                 >
                   See Details

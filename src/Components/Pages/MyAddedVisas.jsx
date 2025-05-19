@@ -40,7 +40,7 @@ const MyAddedVisas = () => {
           {visas.map((visa) => (
             <li
               key={visa?.id}
-              className="card w-full bg-base-100 shadow-xl p-4 rounded-md"
+              className="card w-full bg-base-100 shadow-lg shadow-neutral-content p-4 rounded-md"
             >
               <img
                 src={visa?.countryImage}

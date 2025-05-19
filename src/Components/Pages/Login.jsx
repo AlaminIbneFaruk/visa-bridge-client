@@ -104,10 +104,10 @@ const Login = () => {
             </label>
           </div>
           <div className="form-control mt-2 gap-5">
-            <button className="btn text-primary btn-primary glass hover:text-neutral" type="submit">
+            <button className="btn text-primary btn-info glass hover:text-neutral" type="submit">
               Login
             </button>
-            <Link to="/register" className="btn btn-outline btn-primary text-neutral glass">
+            <Link to="/register" className="btn btn-outline btn-info text-neutral glass">
               Register Now
             </Link>
           </div>

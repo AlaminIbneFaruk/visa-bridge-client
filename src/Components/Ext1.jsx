@@ -61,7 +61,7 @@ const Ext1 = () => {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="card lg:card-side bg-sky-600 shadow-xl mb-8 lg:mb-0 "
+              className="card lg:card-side bg-sky-600 shadow-lg shadow-neutral-content mb-8 lg:mb-0 "
             >
               <figure className="lg:w-1/3 h-full ">
                 <img

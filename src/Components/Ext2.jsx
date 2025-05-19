@@ -38,7 +38,7 @@ const Ext2 = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="card bg-sky-600 shadow-xl"
+            className="card bg-sky-600 shadow-lg shadow-neutral-content"
           >
             <div className="card-body items-center">
               <h2 className="card-title text-white text-center">

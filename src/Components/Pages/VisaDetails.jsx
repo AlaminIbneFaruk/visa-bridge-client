@@ -15,12 +15,7 @@ const VisaDetails = () => {
     const fetchVisa = async () => {
       try {
         const response = await fetch(`https://sunflower-assignment-server.vercel.app/visa/${id}`);
-        if (!response.ok) {
-          if (response.status === 404) {
-            throw new Error("Visa not found.");
-          }
-          throw new Error("An error occurred while fetching the data.");
-        }
+        if (!response.ok) throw new Error("Error fetching data.");
         const data = await response.json();
         setVisa(data);
       } catch (err) {
@@ -33,171 +28,59 @@ const VisaDetails = () => {
   }, [id]);
 
   const handleVisaApplication = async () => {
-    const applicationData = {
-      visaId: id,
-      user: {
-        uid: user?.uid || "",
-        email: user?.email || "",
-        username: user?.displayName || "",
-        photo: user?.photoURL || "",
-      },
-      visaDetails: {
-        country: visa?.country,
-        visaType: visa?.visaType,
-        fee: visa?.fee,
-      },
-      applicationStatus: "pending",
-      appliedDate: new Date().toISOString(),
-    };
-
     try {
       const response = await fetch("https://sunflower-assignment-server.vercel.app/visaapplications", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(applicationData),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ visaId: id, user, status: "pending" }),
       });
-
-      const result = await response.json();
-
-      if (response.ok && result.status === "success") {
-        toast.success("Application submitted successfully.", {
-          position: "top-right",
-        });
-        setIsModalOpen(false);
-      } else {
-        throw new Error(result.message || "Failed to submit application");
-      }
+      if (!response.ok) throw new Error("Failed to submit application.");
+      toast.success("Application submitted successfully.");
+      setIsModalOpen(false);
     } catch (error) {
-      toast.error(`Failed to submit application: ${error.message}`, {
-        position: "top-right",
-      });
+      toast.error(`Failed: ${error.message}`);
     }
   };
 
-  if (loading)
-    return <div className="flex justify-center items-center">Loading...</div>;
-  if (error) return <p className="text-error font-bold">{error}</p>;
-  if (!visa) return <p>No visa details available.</p>;
+  if (loading) return <div>Loading...</div>;
+  if (error) return <p className="text-red-500">{error}</p>;
 
   return (
-    <div className="mx-auto p-4 rounded-lg flex">
-      <div className="bg-gradient-to-t from-sky-500 to-white p-4 rounded-s-lg shadow-xl">
-        <h2 className="text-4xl font-bold mb-2 text-center">Visa Details</h2>
-        <div className="mb-4 flex justify-center p-2 border-2">
-          <img
-            src={visa?.countryImage}
-            alt={`Flag of ${visa?.country}`}
-            className="w-full h-full object-cover rounded-lg"
-          />
+    <div className="p-5 bg-base-100 text-neutral-content">
+      <h2 className="text-3xl font-bold">{visa?.country} Visa Details</h2>
+      <div className="flex flex-col lg:flex-row gap-5 mt-5">
+        <div className="flex-1 bg-base-100 text-neutral-content p-5 rounded-lg">
+          <img src={visa?.countryImage} alt={visa?.country} className="w-full rounded-lg" />
         </div>
-      </div>
-      <div className="space-y-2 border-2 p-5 rounded-e-xl shadow-xl bg-base-100">
-        <p className="border-2 p-2 rounded-lg bg-base-200">
-          <span className="font-semibold">Type:</span> {visa?.visaType}
-        </p>
-        <p className="border-2 p-2 rounded-lg bg-base-100">
-          <span className="font-semibold">Country:</span> {visa?.country}
-        </p>
-        <div className="stats shadow w-full">
-          <div className="stat">
-            <div className="stat-title">Validity</div>
-            <div>
-              <span className="stat-value text-info">{visa?.validity} </span>
-              months
-            </div>
-          </div>
-          <div className="stat">
-            <div className="stat-title">Processing Time</div>
-            <div>
-              <span className="stat-value text-info">
-                {visa?.processingTime}{" "}
-              </span>
-              days
-            </div>
-          </div>
-          <div className="stat">
-            <div className="stat-title">Fee</div>
-            <div className="stat-value text-info">৳{visa?.fee}</div>
-          </div>
-        </div>
-        <div className="card shadow-lg bg-base-200 rounded-lg">
-          <div className="card-body">
-            <h2 className="card-title font-semibold">Required Documents</h2>
-            <ul className="list-disc list-inside">
+        <div className="flex-1 bg-base-100 text-neutral-content p-5 rounded-lg">
+          <h3 className="text-2xl mb-2">{visa?.visaType} Visa</h3>
+          <p className="text-3xl">{visa?.country}</p>
+          <p className="text-lg">{visa?.validity} months</p>
+          <p className="text-lg">{visa?.processingTime} days</p>
+          <p className="text-3xl">৳{visa?.fee}</p>
+          <p><span className="badge badge-secondary">{visa?.Age_Restriction||"0"}</span></p>
+          <div>
+            <h4 className="font-semibold">Required Documents:</h4>
               {visa?.required_documents}
-            </ul>
           </div>
+          <p className="mt-2">{visa?.description}</p>
+          <button onClick={() => setIsModalOpen(true)} className="btn btn-info mt-4">Apply Now</button>
         </div>
-        <div className="card shadow-lg bg-base-100 rounded-lg">
-          <div className="card-body">
-            <h2 className="card-title font-semibold">Description</h2>
-            <p>{visa?.description}</p>
-          </div>
-        </div>
-        <p className="border-2 p-2 rounded-lg bg-base-200">
-          <span className="font-semibold">Age Restriction:</span>{" "}
-          {visa?.Age_Restriction}
-        </p>
-        <p className="border-2 p-2 rounded-lg bg-base-100">
-          <span className="font-semibold">Application Method:</span>{" "}
-          {visa?.Application_method}
-        </p>
-        <p className="border-2 p-2 rounded-lg bg-base-200">
-          <span className="font-semibold">Required Files:</span>{" "}
-          {visa?.required_files?.join(", ")}
-        </p>
-        <div className="mt-4 flex items-center space-x-3">
-          <img
-            src={visa?.user?.photo}
-            alt={visa?.user?.username}
-            className="w-12 h-12 rounded-full"
-          />
-          <span className="font-semibold">{visa?.user?.username}</span>
-        </div>
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700"
-        >
-          Apply for the Visa
-        </button>
-
-        {isModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-              <h2 className="text-xl font-bold mb-4">Visa Application</h2>
-              <p>
-                <span className="font-semibold">Email:</span> {user?.email}
-              </p>
-              <p>
-                <span className="font-semibold">Name:</span> {user?.displayName}
-              </p>
-              <p>
-                <span className="font-semibold">Applied Date:</span>{" "}
-                {new Date().toLocaleDateString()}
-              </p>
-              <p>
-                <span className="font-semibold">Fee:</span> ৳{visa?.fee}
-              </p>
-              <div className="mt-4 flex justify-end space-x-2">
-                <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500"
-                >
-                  Cancel
-                </button>
-                <button
-                  className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
-                  onClick={handleVisaApplication}
-                >
-                  Apply
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-neutral-content bg-opacity-50 flex items-center justify-center">
+          <div className="bg-base-100 text-neutral-content p-6 rounded-lg w-96">
+            <h2 className="text-xl">Apply for {visa?.visaType}</h2>
+            <p>Email: {user?.email}</p>
+            <p>Name: {user?.displayName}</p>
+            <p>Applied Date: {new Date().toLocaleDateString()}</p>
+            <p>Fee: ৳{visa?.fee}</p>
+            <button onClick={handleVisaApplication} className="btn btn-success mt-4">Confirm</button>
+            <button onClick={() => setIsModalOpen(false)} className="btn btn-error mt-2">Cancel</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

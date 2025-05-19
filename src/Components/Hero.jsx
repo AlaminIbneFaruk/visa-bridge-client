@@ -30,7 +30,7 @@ const Hero = () => {
               <p className="text-sm md:text-lg lg:text-xl max-w-xl">
                 Explore the serene beauty of tropical destinations. Book your dream getaway today and experience ultimate relaxation.
               </p>
-              <Link to="/all-visas" className="btn mt-4 px-6 py-2 bg-primary text-white rounded hover:bg-primary transition">
+              <Link to="/all-visas" className="btn mt-4 px-6 py-2 btn-info text-white rounded hover:bg-primary transition">
                 Book Now
               </Link>
             </div>
@@ -50,7 +50,7 @@ const Hero = () => {
               <p className="text-sm md:text-lg lg:text-xl max-w-xl">
                 Embark on an unforgettable journey through stunning landscapes and vibrant cultures. Your next adventure is just a click away.
               </p>
-              <Link to="/all-visas" className="btn mt-4 px-6 py-2 bg-primary text-white rounded hover:bg-primary transition">
+              <Link to="/all-visas" className="btn mt-4 px-6 py-2 btn-info text-white rounded hover:bg-primary transition">
                 Explore Tours
               </Link>
             </div>

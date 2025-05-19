@@ -65,7 +65,7 @@ const MyVisaApplications = () => {
           {appliedVisas.map((appliedVisa) => (
             <div
               key={appliedVisa._id}
-              className="card bg-base-100 shadow-xl rounded-lg overflow-hidden"
+              className="card bg-base-100 shadow-lg shadow-neutral-content rounded-lg overflow-hidden"
             >
               <div className="card-body">
                 <div className="flex items-center gap-4">

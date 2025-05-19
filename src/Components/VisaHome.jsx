@@ -60,7 +60,7 @@ const VisaHome = () => {
       <div className="container grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto py-12">
         {visasToRender.map((visa, idx) => (
           <div
-            className="card w-full bg-base-100 shadow-xl lg:p-0 p-5"
+            className="card w-full bg-base-100 shadow-lg shadow-neutral-content lg:p-0 p-5"
             key={visa?._id || idx}
           >
             <figure>
@@ -98,7 +98,7 @@ const VisaHome = () => {
               </div>
               <div>
                 <button
-                  className="btn btn-primary font-bold"
+                  className="btn btn-info font-bold"
                   onClick={() => navigate(`/details/${visa?._id}`)}
                 >
                   See Details
