@@ -10,7 +10,7 @@ const SectionContent = ({ title, subtitle, description }) => {
       <h2 className="font-bold text-4xl max-w-lg mx-auto text-center border-y-4 py-4">
         {title}
       </h2>
-      <p className="text-sm mt-12 max-w-3xl mx-auto">{description}</p>
+      <p className="text-base mt-12 max-w-3xl mx-auto">{description}</p>
     </div>
   );
 };

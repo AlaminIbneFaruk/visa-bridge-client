@@ -45,8 +45,8 @@ const AllVisas = () => {
 
   return (
     <>
-      <div className="container mx-auto">
-        <div className="bg-white py-4 flex justify-between items-center px-4">
+      <div className="container mx-auto text-neutral-content">
+        <div className="bg-base-100 py-4 flex justify-between items-center px-4">
           <h1 className="text-4xl font-bold">All Visas</h1>
           <div className="flex gap-4">
             <div className="dropdown dropdown-end z-10">
@@ -144,13 +144,19 @@ const AllVisas = () => {
                   <div className="stat-title">Fee</div>
                   <div className="stat-value text-primary">৳{visa?.fee}</div>
                 </div>
-                <div className="stat border-2">
-                  <div className="stat-title text-base">Validity</div>
-                  <div className="stat-value text-base">{visa?.validity} months</div>
-                </div>
-                <div className="stat border-2">
-                  <div className="stat-title text-base">Processing</div>
-                  <div className="stat-value text-base">{visa?.processingTime} days</div>
+                <div className="flex">
+                  <div className="stat border-2">
+                    <div className="stat-title text-base">Validity</div>
+                    <div className="stat-value text-base">
+                      {visa?.validity} months
+                    </div>
+                  </div>
+                  <div className="stat border-2">
+                    <div className="stat-title text-base">Processing</div>
+                    <div className="stat-value text-base">
+                      {visa?.processingTime} days
+                    </div>
+                  </div>
                 </div>
                 <p>
                   <strong>Required Documents:</strong>{" "}

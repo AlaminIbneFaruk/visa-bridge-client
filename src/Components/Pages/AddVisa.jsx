@@ -146,8 +146,8 @@ const AddVisa = () => {
     <div>
       <div className="hero bg-gradient-to-tr from-blue-500 via-sky-400 to-blue-500 min-h-screen">
         <div className="hero-content flex-col">
-          <div className="text-center lg:text-left bg-white w-full p-4 rounded-2xl">
-            <h1 className="text-5xl font-bold text-black mx-auto text-center">
+          <div className="text-center lg:text-left bg-base-100 w-full p-4 rounded-2xl">
+            <h1 className="text-5xl font-bold text-base-neutral mx-auto text-center">
               {text}
               <Cursor cursorColor="Blue" />
             </h1>

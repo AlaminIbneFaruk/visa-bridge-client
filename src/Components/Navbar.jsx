@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import DarkModeToggle from "./DarkModeToggle";
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
@@ -28,7 +29,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 text-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
                 <Link to="/">Home</Link>
@@ -63,7 +64,7 @@ const Navbar = () => {
             <img src="/VisaBridge.jpg" alt="VisaBridge" className="h-full" />
           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex text-base-100">
           <ul className="menu menu-horizontal px-1 font-bold">
             <li>
               <Link to="/">Home</Link>
@@ -93,7 +94,8 @@ const Navbar = () => {
             )}
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end text-base-100">
+          <DarkModeToggle/>
           {!user ? (
             <div className="flex gap-2">
               <Link to="login" className="btn">
@@ -134,7 +136,7 @@ const Navbar = () => {
                         e.target.src = "https://via.placeholder.com/32";
                       }}
                     />
-                    <div className="absolute left-1/2 -translate-x-1/2 -bottom-10 bg-sky-800 text-white text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                    <div className="absolute left-1/2 -translate-x-1/2 -bottom-10 bg-sky-800 text-base-100 text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
                       {user?.displayName}
                       <div className="absolute left-1/2 -translate-x-1/2 -top-1 h-2 w-2 bg-sky-800 rotate-45"></div>
                     </div>

@@ -68,7 +68,7 @@ const Login = () => {
         <meta name="description" content="Login to Visa Bridge and access exclusive travel features." />
       </Helmet>
 
-      <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl">
+      <div className="card w-full max-w-sm mx-auto shrink-0 shadow-2xl bg-base-100/60 backdrop-blur-md text-neutral-content border border-white/20">
         <div className="text-center font-sans font-bold bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-500 bg-clip-text text-transparent pt-5 text-2xl mx-auto">
           {text}
         </div>
@@ -82,7 +82,7 @@ const Login = () => {
               ref={emailref}
               type="email"
               placeholder="Enter your email"
-              className="input input-bordered"
+              className="input input-bordered bg-white/40 backdrop-blur-md text-neutral-content"
               required
             />
           </div>
@@ -94,7 +94,7 @@ const Login = () => {
               name="password"
               type="password"
               placeholder="Enter your password"
-              className="input input-bordered"
+              className="input input-bordered bg-white/40 backdrop-blur-md text-neutral-content"
               required
             />
             <label className="label">
@@ -104,16 +104,16 @@ const Login = () => {
             </label>
           </div>
           <div className="form-control mt-2 gap-5">
-            <button className="btn btn-primary" type="submit">
+            <button className="btn text-primary btn-primary glass hover:text-neutral" type="submit">
               Login
             </button>
-            <Link to="/register" className="btn btn-outline btn-primary text-white">
+            <Link to="/register" className="btn btn-outline btn-primary text-neutral glass">
               Register Now
             </Link>
           </div>
           <button
             type="button"
-            className="btn bg-blue-500 text-white hover:bg-blue-600"
+            className="btn bg-blue-500 text-white hover:bg-blue-600 glass"
             onClick={handleGoogle}
           >
             <FaGoogle className="text-2xl" />

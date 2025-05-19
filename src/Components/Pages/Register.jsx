@@ -53,43 +53,39 @@ const Register = () => {
 
   return (
     <div className="py-8">
-      <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl">
+      <div className="card w-full max-w-sm mx-auto shrink-0 shadow-2xl bg-base-100/60 backdrop-blur-md border border-white/20">
         <form className="card-body" onSubmit={handleRegister}>
           <div className="text-center font-sans font-bold bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-500 bg-clip-text text-transparent text-2xl">
             {text}
           </div>
           <div className="form-control">
             <label className="label"><span className="label-text text-base">Name</span></label>
-            <input name="name" type="text" placeholder="Full Name" className="input input-bordered" required />
+            <input name="name" type="text" placeholder="Full Name" className="input input-bordered bg-white/60 backdrop-blur-md text-neutral-content" required />
             <label className="label"><span className="label-text text-base">Photo URL</span></label>
-            <input name="photo" type="text" placeholder="Photo URL" className="input input-bordered" required />
+            <input name="photo" type="text" placeholder="Photo URL" className="input input-bordered bg-white/60 backdrop-blur-md text-neutral-content" required />
           </div>
           <div className="form-control">
             <label className="label"><span className="label-text text-base">Email</span></label>
-            <input name="email" type="email" placeholder="Email" className="input input-bordered" required />
+            <input name="email" type="email" placeholder="Email" className="input input-bordered bg-white/60 backdrop-blur-md text-neutral-content" required />
           </div>
           {["password", "Cpassword"].map((field, idx) => (
             <div key={idx} className="form-control relative">
-              <label className="label">
-                <span className="label-text text-base">{field === "password" ? "Password" : "Confirm Password"}</span>
-              </label>
-              <input name={field} type={showPassword ? "text" : "password"} placeholder={field} className="input input-bordered" required />
+              <label className="label"><span className="label-text text-base">{field === "password" ? "Password" : "Confirm Password"}</span></label>
+              <input name={field} type={showPassword ? "text" : "password"} placeholder={field} className="input input-bordered bg-white/40 backdrop-blur-md text-neutral-content" required />
               <button className="btn btn-xs absolute right-4 top-12" onClick={(e) => { e.preventDefault(); setShowPassword(!showPassword); }}>
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </button>
             </div>
           ))}
-
           <div className="form-control">
             <label className="label cursor-pointer justify-start gap-2">
               <input name="terms" type="checkbox" className="checkbox" />
               <span className="label-text">Accept all the terms and conditions</span>
             </label>
           </div>
-
           <div className="form-control mt-2 gap-5">
-            <button type="submit" className="btn btn-primary">Register</button>
-            <Link to="/login" className="btn btn-primary btn-outline text-white">Already have an account? Login</Link>
+            <button type="submit" className="btn text-primary btn-primary glass hover:text-neutral">Register</button>
+            <Link to="/login" className="btn btn-primary btn-outline text-white glass">Already have an account? Login</Link>
           </div>
         </form>
       </div>
