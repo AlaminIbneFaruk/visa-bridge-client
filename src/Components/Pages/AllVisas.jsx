@@ -53,24 +53,64 @@ const AllVisas = () => {
               <label tabIndex={0} className="btn btn-primary m-1">
                 Filter by Type: {filterType}
               </label>
-              <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                <li><button onClick={() => handleFilterChange("All")}>All</button></li>
-                <li><button onClick={() => handleFilterChange("Tourist")}>Tourist</button></li>
-                <li><button onClick={() => handleFilterChange("Work")}>Work</button></li>
-                <li><button onClick={() => handleFilterChange("Student")}>Student</button></li>
-                <li><button onClick={() => handleFilterChange("Transit")}>Transit</button></li>
-                <li><button onClick={() => handleFilterChange("Business")}>Business</button></li>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <button onClick={() => handleFilterChange("All")}>All</button>
+                </li>
+                <li>
+                  <button onClick={() => handleFilterChange("Tourist")}>
+                    Tourist
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleFilterChange("Work")}>
+                    Work
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleFilterChange("Student")}>
+                    Student
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleFilterChange("Transit")}>
+                    Transit
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleFilterChange("Business")}>
+                    Business
+                  </button>
+                </li>
               </ul>
             </div>
             <div className="dropdown dropdown-end z-10">
               <label tabIndex={0} className="btn btn-secondary m-1">
                 Sort by: {sortType}
               </label>
-              <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                <li><button onClick={() => handleSortChange("None")}>None</button></li>
-                <li><button onClick={() => handleSortChange("Fee")}>Fee</button></li>
-                <li><button onClick={() => handleSortChange("Validity")}>Validity</button></li>
-                <li><button onClick={() => handleSortChange("Processing")}>Processing</button></li>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <button onClick={() => handleSortChange("None")}>None</button>
+                </li>
+                <li>
+                  <button onClick={() => handleSortChange("Fee")}>Fee</button>
+                </li>
+                <li>
+                  <button onClick={() => handleSortChange("Validity")}>
+                    Validity
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleSortChange("Processing")}>
+                    Processing
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
@@ -79,33 +119,59 @@ const AllVisas = () => {
           {filteredVisas.map((visa) => (
             <div key={visa?._id} className="card w-full bg-base-100 shadow-xl">
               <figure>
-                <img src={visa?.countryImage} alt={visa?.country} className="w-full lg:h-48 h-96 object-cover" />
+                <img
+                  src={visa?.countryImage}
+                  alt={visa?.country}
+                  className="w-full lg:h-48 h-96 object-cover"
+                />
               </figure>
               <div className="card-body">
                 <h2 className="card-title flex justify-between">
                   {visa?.country}
-                  <div className={`badge ${visa?.visaType === "Tourist" ? "badge-primary" : visa?.visaType === "Work" ? "badge-secondary" : "badge-accent"}`}>{visa?.visaType}</div>
+                  <div
+                    className={`badge ${
+                      visa?.visaType === "Tourist"
+                        ? "badge-primary"
+                        : visa?.visaType === "Work"
+                        ? "badge-secondary"
+                        : "badge-accent"
+                    }`}
+                  >
+                    {visa?.visaType}
+                  </div>
                 </h2>
-                <div className="grid gap-2">
-                  <div className="stat border-2">
-                    <div className="stat-title">Fee</div>
-                    <div className="stat-value text-primary">৳{visa?.fee}</div>
-                  </div>
-                  <div className="stat border-2">
-                    <div className="stat-title">Validity</div>
-                    <div className="stat-value">{visa?.validity} months</div>
-                  </div>
-                  <div className="stat border-2">
-                    <div className="stat-title">Processing</div>
-                    <div className="stat-value">{visa?.processingTime} days</div>
-                  </div>
+                <div className="stat border-2">
+                  <div className="stat-title">Fee</div>
+                  <div className="stat-value text-primary">৳{visa?.fee}</div>
                 </div>
-                <p><strong>Required Documents:</strong> {visa?.required_documents}</p>
+                <div className="stat border-2">
+                  <div className="stat-title text-base">Validity</div>
+                  <div className="stat-value text-base">{visa?.validity} months</div>
+                </div>
+                <div className="stat border-2">
+                  <div className="stat-title text-base">Processing</div>
+                  <div className="stat-value text-base">{visa?.processingTime} days</div>
+                </div>
+                <p>
+                  <strong>Required Documents:</strong>{" "}
+                  {visa?.required_documents}
+                </p>
                 <div className="card-actions justify-end">
-                  <div className="badge badge-outline">{visa?.Application_method}</div>
-                  <div className="badge badge-outline">{visa?.Age_Restriction ? `${visa?.Age_Restriction}+ years` : "None"}</div>
+                  <div className="badge badge-outline">
+                    {visa?.Application_method}
+                  </div>
+                  <div className="badge badge-outline">
+                    {visa?.Age_Restriction
+                      ? `${visa?.Age_Restriction}+ years`
+                      : "None"}
+                  </div>
                 </div>
-                <button className="btn btn-primary font-bold" onClick={() => navigate(`/details/${visa?._id}`)}>See Details</button>
+                <button
+                  className="btn btn-primary font-bold"
+                  onClick={() => navigate(`/details/${visa?._id}`)}
+                >
+                  See Details
+                </button>
               </div>
             </div>
           ))}

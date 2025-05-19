@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SectionContent from "./SectionContent";
 
-const placeholderVisas = Array(6).fill({
+const placeholderVisas = Array(8).fill({
   country: "Country Name",
   countryImage: "",
   visaType: "Visa Type",
