@@ -23,7 +23,7 @@ const MyAddedVisas = () => {
 
   return (
     <div>
-      <h2 className="text-xl font-bold mb-4 text-center p-4 bg-white">
+      <h2 className="text-xl font-bold mb-4 text-center p-4 bg-white text-neutral">
         My Added Visas
       </h2>
       {visas.length === 0 ? (

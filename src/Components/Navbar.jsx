@@ -29,7 +29,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-neutral text-neutral-content rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 text-neutral focus:text-white rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
                 <Link to="/">Home</Link>
@@ -67,26 +67,26 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex text-base-100">
           <ul className="menu menu-horizontal px-1 font-bold">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" className="visited:text-blue-800">Home</Link>
             </li>
             <li>
-              <Link to="all-visas">All Visas</Link>
+              <Link to="all-visas" className="visited:text-blue-800">All Visas</Link>
             </li>
             <li>
-              <Link to="contact-us">Contact Us</Link>
+              <Link to="contact-us" className="visited:text-blue-800">Contact Us</Link>
             </li>
             {user && (
               <>
                 <li>
-                  <Link to="add-visa">Add Visa</Link>
+                  <Link to="add-visa" className="visited:text-blue-800">Add Visa</Link>
                 </li>
                 <li>
-                  <Link to={`my-added-visas/${user?.uid}`}>
+                  <Link to={`my-added-visas/${user?.uid}`} className="visited:text-blue-800">
                     My Added Visas
                   </Link>
                 </li>
                 <li>
-                  <Link to={`my-visa-applications/${user?.uid}`}>
+                  <Link to={`my-visa-applications/${user?.uid}`} className="visited:text-blue-800">
                     My Visa Applications
                   </Link>
                 </li>
