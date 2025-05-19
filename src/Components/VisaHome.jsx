@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SectionContent from "./SectionContent";
-import { useCallback } from "react";
 
 const placeholderVisas = Array(6).fill({
   country: "Country Name",
@@ -41,21 +40,6 @@ const VisaHome = () => {
   }, []);
 
   const navigate = useNavigate();
-
-
-  const sortVisasByPrice = useCallback((order) => {
-    if (!visas) return;
-    const sortedVisas = [...visas].sort((a, b) => {
-      const feeA = parseFloat(a.fee.replace(/[^0-9.-]+/g, "")) || 0;
-      const feeB = parseFloat(b.fee.replace(/[^0-9.-]+/g, "")) || 0;
-      return order === "asc" ? feeA - feeB : feeB - feeA;
-    });
-    setVisas(sortedVisas);
-  }, [visas]);
-
-  useEffect(() => {
-    sortVisasByPrice(sortOrder);
-  }, [sortOrder,sortVisasByPrice]);
 
   const toggleSortOrder = () => {
     setSortOrder((prev) => (prev === "asc" ? "desc" : "asc"));

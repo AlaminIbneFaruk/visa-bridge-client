@@ -73,7 +73,6 @@ const AddVisa = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Extra validation: Ensure at least one document is selected
     if (visaDetails.required_documents.length === 0) {
       toast.error("Please select at least one required document.", {
         position: "top-right",
@@ -81,15 +80,13 @@ const AddVisa = () => {
       return;
     }
 
-    // Convert fee and Age_restriction to numbers before sending
     const payload = {
       ...visaDetails,
       fee: Number(visaDetails.fee),
       Age_restriction: Number(visaDetails.Age_restriction),
-      created_at: new Date().toISOString(), // Fresh timestamp
+      created_at: new Date().toISOString(), 
     };
 
-    // Check if conversion resulted in valid numbers
     if (isNaN(payload.fee)) {
       toast.error("Fee must be a valid number.", { position: "top-right" });
       return;
@@ -114,7 +111,6 @@ const AddVisa = () => {
 
       if (data.status === "success") {
         toast.success(data.message, { position: "top-right" });
-        // Reset form with consistent initial values
         setVisaDetails({
           countryImage: "",
           country: "",

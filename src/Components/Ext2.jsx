@@ -32,10 +32,6 @@ const Ext2 = () => {
           "Proof of Residence",
           "Criminal Background Check",
           "Health Certificates",
-          "Letter of Consent",
-          "Visa Fee Payment Receipt",
-          "Previous Visas",
-          "Additional Documents",
         ].map((item, index) => (
           <motion.div
             key={index}

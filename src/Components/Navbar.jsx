@@ -34,24 +34,24 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/all-visas">All Visas</Link>
+                <Link to="all-visas">All Visas</Link>
               </li>
               <li>
-                <Link to="/contact-us">Contact Us</Link>
+                <Link to="contact-us">Contact Us</Link>
               </li>
 
               {user && (
                 <>
                   <li>
-                    <Link to="/add-visa">Add Visa</Link>
+                    <Link to="add-visa">Add Visa</Link>
                   </li>
                   <li>
-                    <Link to={`/my-added-visas/${user?.uid}`}>
+                    <Link to={`my-added-visas/${user?.uid}`}>
                       My Added Visas
                     </Link>
                   </li>
                   <li>
-                    <Link to={`/my-visa-applications/${user?.uid}`}>
+                    <Link to={`my-visa-applications/${user?.uid}`}>
                       My Visa Applications
                     </Link>
                   </li>
@@ -69,23 +69,23 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/all-visas">All Visas</Link>
+              <Link to="all-visas">All Visas</Link>
             </li>
             <li>
-              <Link to="/contact-us">Contact Us</Link>
+              <Link to="contact-us">Contact Us</Link>
             </li>
             {user && (
               <>
                 <li>
-                  <Link to="/add-visa">Add Visa</Link>
+                  <Link to="add-visa">Add Visa</Link>
                 </li>
                 <li>
-                  <Link to={`/my-added-visas/${user?.uid}`}>
+                  <Link to={`my-added-visas/${user?.uid}`}>
                     My Added Visas
                   </Link>
                 </li>
                 <li>
-                  <Link to={`/my-visa-applications/${user?.uid}`}>
+                  <Link to={`my-visa-applications/${user?.uid}`}>
                     My Visa Applications
                   </Link>
                 </li>
@@ -96,11 +96,11 @@ const Navbar = () => {
         <div className="navbar-end">
           {!user ? (
             <div className="flex gap-2">
-              <Link to="/login" className="btn">
+              <Link to="login" className="btn">
                 Login
               </Link>
               <Link
-                to="/register"
+                to="register"
                 className="btn btn-primary border border-black text-white"
               >
                 Register
@@ -112,7 +112,7 @@ const Navbar = () => {
               <Link
                 to={
                   user.email === "alaminibnefarukayon@gmail.com"
-                    ? "/admin"
+                    ? "admin"
                     : "/dashboard"
                 }
                 className="btn btn-secondary"

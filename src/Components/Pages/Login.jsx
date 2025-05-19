@@ -44,7 +44,7 @@ const Login = () => {
       toast.success("Logged in Successfully with Google!");
 
       setTimeout(() => {
-        if (userEmail === "alaminibnefarukayon@gmail.com") {
+        if (userEmail === "durjoy@gmail.com") {
           navigate("/admin");
         } else {
           navigate("/dashboard");

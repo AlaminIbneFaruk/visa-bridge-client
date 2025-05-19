@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-
 import Home from "../Components/Pages/Home.jsx";
 import AllVisas from "../Components/Pages/AllVisas.jsx";
 import AddVisa from "../Components/Pages/AddVisa.jsx";
@@ -26,12 +25,11 @@ import DashboardHome from "../Components/Pages/DashboardHome.jsx";
 import DashboardBookings from "../Components/Pages/DashboardBookings.jsx";
 import DashboardProfile from "../Components/Pages/DashboardProfile.jsx";
 import DashboardComments from "../Components/Pages/DashboardComments.jsx";
-
 import DashboardLayout from "../Components/DashboardLayout.jsx";
 
 const Routes = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     element: <Layout />,
     children: [
       { path: "", element: <Home /> },
@@ -75,7 +73,7 @@ const Routes = createBrowserRouter([
           </PrivateRoutes>
         ),
         children: [
-          { path: "", element: <AdminHome /> },        // Admin landing page
+          { path: "", element: <AdminHome /> },
           { path: "users", element: <Users /> },
           { path: "guides", element: <Guides /> },
           { path: "packages", element: <Packages /> },
@@ -96,10 +94,10 @@ const Routes = createBrowserRouter([
       { path: "contact-us", element: <ContactUs /> },
       { path: "tourist-visa", element: <Tourist /> },
       { path: "student-visa", element: <Student /> },
-      { path: "work-visa", element: <Work /> }, // lowercase consistent path
+      { path: "/work-visa", element: <Work /> },
     ],
   },
-  { path: "*", element: <ErrorPage /> },
+  { path: "*", element: <ErrorPage /> }
 ]);
 
 export default Routes;
