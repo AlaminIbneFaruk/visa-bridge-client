@@ -1,9 +1,11 @@
+import { useEffect, useState } from "react";
 import SectionContent from "./SectionContent";
 import { motion } from "framer-motion";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import 'swiper/css/pagination';
+import "swiper/css/pagination";
+
 const testimonials = [
   {
     name: "John Doe",
@@ -30,36 +32,49 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const [slidesPerView, setSlidesPerView] = useState(1);
+
+  useEffect(() => {
+    function updateSlides() {
+      const width = window.innerWidth;
+      if (width >= 1024) setSlidesPerView(3);
+      else if (width >= 768) setSlidesPerView(2);
+      else setSlidesPerView(1);
+    }
+
+    updateSlides(); // Set on mount
+
+    window.addEventListener("resize", updateSlides);
+    return () => window.removeEventListener("resize", updateSlides);
+  }, []);
+
   return (
-    <div className="p-8 rounded-xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4 text-center">
-        <SectionContent title="Testimonials" subtitle="What Our Clients Say" />
-      </h2>
+    <div className="p-6 md:p-8 rounded-xl mx-auto max-w-7xl">
+      <SectionContent title="Testimonials" subtitle="What Our Clients Say" />
       <Swiper
         spaceBetween={30}
-        slidesPerView={3}
+        slidesPerView={slidesPerView}
         loop={true}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         centeredSlides={true}
         pagination={{ clickable: true, dynamicBullets: true }}
-        modules={[Pagination]}
-        className="p-4 rounded-2xl flex gap-2"
+        modules={[Pagination, Autoplay]}
+        className="mt-8"
       >
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index}>
             {({ isActive }) => (
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0, scale: isActive ? 1.02 : 0.6 }}
+                animate={{ opacity: 1, y: 0, scale: isActive ? 1.05 : 0.85 }}
                 transition={{ duration: 0.5 }}
-                className={`card shadow-lg shadow-neutral-content bg-neutral-content text-neutral p-4 rounded-2xl mb-12 flex flex-col items-center mx-4 mt-4 lg:h-[24vh] ${
-                  isActive ? "scale-125" : "scale-90"
-                }`}
+                className={`card shadow-lg bg-neutral p-6 rounded-2xl flex flex-col items-center text-neutral-content mx-3`}
+                style={{ minHeight: "18rem" }}
               >
-                <p className="text-lg mb-2">
+                <p className="text-lg mb-4 text-center font-serif italic">
                   &quot;{testimonial.message}&quot;
                 </p>
-                <h3 className="text-xl font-semibold">
+                <h3 className="text-xl font-semibold text-center">
                   - {testimonial.name}, {testimonial.location}
                 </h3>
               </motion.div>
