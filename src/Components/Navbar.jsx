@@ -42,7 +42,7 @@ const Navbar = () => {
       <div className="navbar-start flex items-center gap-4">
         {/* Mobile hamburger menu */}
         <div className="dropdown lg:hidden">
-          <label tabIndex={0} className="btn btn-ghost btn-circle">
+          <label tabIndex={0} className="btn btn-ghost btn-circle ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -60,7 +60,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-56 text-white"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 text-neutral-content rounded-box w-56 text-white"
           >
             {baseLinks.map(({ to, label }) => (
               <li key={label}>
