@@ -38,7 +38,7 @@ const Navbar = () => {
     : null;
 
   return (
-    <div className="navbar px-8 mx-auto sticky top-0 z-50 bg-gradient-to-tr from-blue-500 via-sky-400 to-white">
+    <div className="navbar px-8 mx-auto fixed top-0 z-50 bg-white/50 backdrop-blur-lg">
       <div className="navbar-start flex items-center gap-4">
         {/* Mobile hamburger menu */}
         <div className="dropdown lg:hidden">
@@ -102,7 +102,7 @@ const Navbar = () => {
         </div>
 
         {/* Logo */}
-        <Link to="/" className="btn normal-case text-xl">
+        <Link to="/" className="normal-case text-xl">
           <img src="/VisaBridge.jpg" alt="VisaBridge" className="h-10" />
         </Link>
       </div>

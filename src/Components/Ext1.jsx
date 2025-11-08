@@ -57,27 +57,34 @@ const Ext1 = () => {
           Follow these simple steps to apply for your visa and get your travel
           plans on track.
         </p>
-        <div className="grid grid-cols-1 gap-12">
+        <div className="grid grid-cols-3 gap-12">
           {steps.map((step, index) => (
             <div
               key={index}
-              className="card lg:card-side bg-sky-600 shadow-lg shadow-neutral-content mb-8 lg:mb-0 "
+              className="card bg-sky-600 shadow-lg shadow-neutral-content mb-8 lg:mb-0 "
             >
-              <figure className="lg:w-1/3 h-full ">
+              <figure className="h-96 w-full">
                 <img
                   src={step.image}
                   alt={step.title}
                   className="w-full h-full bg-start object-cover"
                 />
               </figure>
-              <Slide direction={index % 2 === 0 ? "left" : "right"} className="w-2/3">
-                <div className="card-body lg:py-[calc(15%)]">
-                  <h2 className="card-title text-white text-4xl font-bold pb-8">
-                    {step.title}
-                  </h2>
-                  <p className="text-white text-xl pb-4">{step.description}</p>
-                </div>
-              </Slide>
+              <div className="overflow-x-hidden">
+                <Slide
+                  direction={index % 2 === 0 ? "left" : "right"}
+                  className=""
+                >
+                  <div className="card-body lg:py-[calc(15%)]">
+                    <h2 className="card-title text-white text-4xl font-bold pb-8">
+                      {step.title}
+                    </h2>
+                    <p className="text-white text-xl pb-4">
+                      {step.description}
+                    </p>
+                  </div>
+                </Slide>
+              </div>
             </div>
           ))}
         </div>
