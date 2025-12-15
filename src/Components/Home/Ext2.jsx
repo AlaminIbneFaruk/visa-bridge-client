@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import SectionContent from "./SectionContent";
+import SectionContent from "../SectionContent";
 
 const Ext2 = () => {
   return (

@@ -27,18 +27,18 @@ const Navbar = () => {
   const dashboardLink = user
     ? {
         to:
-          user.email === "alaminibnefarukayon@gmail.com"
+          user.email === "admin@visabridge.com"
             ? "/admin"
             : "/dashboard",
         label:
-          user.email === "alaminibnefarukayon@gmail.com"
+          user.email === "admin@visabridge.com"
             ? "Admin"
             : "Dashboard",
       }
     : null;
 
   return (
-    <div className="navbar px-8 mx-auto fixed top-0 z-50 bg-white/50 backdrop-blur-lg">
+    <div className="navbar px-8 mx-auto sticky  top-0 z-50 bg-base-100 backdrop-blur-lg">
       <div className="navbar-start flex items-center gap-4">
         {/* Mobile hamburger menu */}
         <div className="dropdown lg:hidden">
@@ -141,7 +141,7 @@ const Navbar = () => {
               {dashboardLink.label}
             </Link>
 
-            <div className="flex items-center btn btn-info btn-circle">
+            <div className="flex items-center btn btn-info btn-outline btn-circle outline-offset-2 outline-2">
               {user.photoURL ? (
                 <div className="relative group z-20">
                   <img
@@ -152,14 +152,14 @@ const Navbar = () => {
                       (e.target.src = "https://via.placeholder.com/32")
                     }
                   />
-                  <div className="absolute left-1/2 -translate-x-1/2 -bottom-10 bg-sky-800 text-black text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
-                    {user.displayName}
+                  <div className="absolute left-1/2 top-full -translate-x-1/2  bg-sky-800 text-black text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                    {user?.displayName}
                     <div className="absolute left-1/2 -translate-x-1/2 -top-1 h-2 w-2 bg-sky-800 rotate-45"></div>
                   </div>
                 </div>
               ) : (
                 <span className="text-lg font-bold">
-                  {user.displayName?.[0] || "U"}
+                  {user?.displayName?.[0] || "U"}
                 </span>
               )}
             </div>

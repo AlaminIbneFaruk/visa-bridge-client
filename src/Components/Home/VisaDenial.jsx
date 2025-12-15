@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import SectionContent from "./SectionContent";
+import SectionContent from "../SectionContent";
 
 const visaDenialReasons = [
   {

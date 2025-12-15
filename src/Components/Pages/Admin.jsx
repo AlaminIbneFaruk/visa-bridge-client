@@ -43,7 +43,7 @@ const Admin = () => {
           </Link>
         </nav>
       </aside>
-      <div>
+      <div className="w-full">
         <Outlet />
       </div>
     </div>

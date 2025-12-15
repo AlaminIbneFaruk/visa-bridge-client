@@ -8,7 +8,7 @@ const Users = () => {
   ];
 
   return (
-    <div className="p-4">
+    <div className="p-4 w-full">
       <h2 className="text-2xl font-bold mb-4">User Management</h2>
       <div className="overflow-x-auto">
         <table className="table w-full">

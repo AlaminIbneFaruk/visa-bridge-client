@@ -25,7 +25,7 @@ const Login = () => {
       form.reset();
 
       setTimeout(() => {
-        if (userEmail === "hridoy@example.com") {
+        if (userEmail === "admin@visabridge.com") {
           navigate("/admin");
         } else {
           navigate("/dashboard");
@@ -44,7 +44,7 @@ const Login = () => {
       toast.success("Logged in Successfully with Google!");
 
       setTimeout(() => {
-        if (userEmail === "durjoy@google.com") {
+        if (userEmail === "admin@visabridge.com") {
           navigate("/admin");
         } else {
           navigate("/dashboard");

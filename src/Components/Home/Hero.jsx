@@ -16,11 +16,11 @@ const Hero = () => {
         swipeable
         className="overflow-hidden shadow-lg"
       >
-        <div className="relative min-h-screen">
+        <div className="relative min-h-[60vh] lg:min-h-screen">
           <img
             src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
             alt="Tropical Paradise Awaits"
-            className="w-full min-h-screen object-cover"
+            className="w-full min-h-[60vh] lg:min-h-screen object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-base-100/80 to-transparent bg-opacity-50 flex items-center justify-start p-8">
             <div className="text-left text-neutral-content space-y-4 px-8">
@@ -40,11 +40,11 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="relative min-h-screen">
+        <div className="relative min-h-[60vh] lg:min-h-screen">
           <img
             src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
             alt="Adventure Awaits"
-            className="w-full min-h-screen object-cover"
+            className="w-full min-h-[60vh] lg:min-h-screen object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-base-100/80 to-transparent bg-opacity-50 flex items-center justify-start p-8">
             <div className="text-left text-neutral-content space-y-4 px-8">
@@ -66,11 +66,11 @@ const Hero = () => {
         </div>
       </Carousel>
       <div className="absolute bottom-10 right-0 left-0 z-50 flex flex-col items-center">
-        <a className="btn btn-circle outline btn-primary outline-4 bg-transparent">
-          <FaArrowDown className=" font-bold text-2xl"/>
+        <a className="btn btn-circle outline btn-primary outline-4 bg-transparent animate-bounce hidden lg:block">
+          <FaArrowDown className=" font-bold text-2xl text-center"/>
 
         </a>
-        <p className="text-white/60 max-w-40 text-center my-2 backdrop-blur-sm">Scroll Down For More Content</p>
+        <p className="text-white/60 max-w-40 text-center my-2 backdrop-blur-sm hidden lg:block">Scroll Down For More Content</p>
       </div>
     </div>
   );

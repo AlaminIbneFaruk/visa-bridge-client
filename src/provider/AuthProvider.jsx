@@ -30,7 +30,7 @@ const AuthProvider = ({children}) => {
       setUser(user);
       setLoading(false);
     });
-    return ( ) => {
+    return () => {
       unsubscribe();
     }
   }, []);
@@ -45,7 +45,7 @@ const AuthProvider = ({children}) => {
   return (
     <AuthContext.Provider value={AuthInfo}>
       {children}
-    </AuthContext.Provider >
+    </AuthContext.Provider>
   );
 };
 AuthProvider.propTypes = {

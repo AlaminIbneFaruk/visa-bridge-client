@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SectionContent from "./SectionContent";
-
+import SectionContent from "../SectionContent";
+import useVisas from "../../hooks/useVisas";
 const placeholderVisas = Array(8).fill({
   country: "Country Name",
   countryImage: "",
@@ -15,29 +14,30 @@ const placeholderVisas = Array(8).fill({
 });
 
 const VisaHome = () => {
-  const [visas, setVisas] = useState(null);
-  const [loading, setLoading] = useState(true);
+  // const [visas, setVisas] = useState(null);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setLoading(true);
-    fetch("https://sunflower-assignment-server.vercel.app/visas")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to fetch visas");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setVisas(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setVisas([]);
-        setLoading(false);
-      });
-  }, []);
-
+  // useEffect(() => {
+  //   setLoading(true);
+  //   fetch("https://sunflower-assignment-server.vercel.app/visas")
+  //     .then((res) => {
+  //       if (!res.ok) {
+  //         throw new Error("Failed to fetch visas");
+  //       }
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       setVisas(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //       setVisas([]);
+  //       setLoading(false);
+  //     });
+  // }, []);
+  const [visas,loading]=useVisas();
+  // const popular
   const navigate = useNavigate();
 
   const visasToRender = loading

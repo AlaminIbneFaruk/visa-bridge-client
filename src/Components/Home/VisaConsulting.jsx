@@ -1,6 +1,6 @@
 import { AiFillHeart } from "react-icons/ai";
 import { MdOutlineRecordVoiceOver, MdOutlineSpeed } from "react-icons/md";
-import SectionContent from "./SectionContent";
+import SectionContent from "../SectionContent";
 
 const VisaConsulting = () => {
   return (

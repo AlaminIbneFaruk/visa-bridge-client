@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../Components/Pages/Home.jsx";
-import AllVisas from "../Components/Pages/AllVisas.jsx";
-import AddVisa from "../Components/Pages/AddVisa.jsx";
+import AllVisas from "../Components/Pages/AllVisasPage/AllVisas.jsx";
+import AddVisa from "../Components/Pages/AddVisaPages/AddVisa.jsx";
 import MyAddedVisas from "../Components/Pages/MyAddedVisas.jsx";
 import VisaDetails from "../Components/Pages/VisaDetails.jsx";
 import MyVisaApplications from "../Components/Pages/MyVisaApplications.jsx";
 import Login from "../Components/Pages/Login.jsx";
 import Register from "../Components/Pages/Register.jsx";
-import ErrorPage from "../Components/Pages/ErrorPage.jsx";
+import ErrorPage from "../Components/Pages/Error/ErrorPage.jsx";
 import Layout from "../Components/Layout.jsx";
 import PrivateRoutes from "./PrivateRoutes.jsx";
 import ContactUs from "../Components/Pages/ContactUs.jsx";
@@ -32,7 +32,7 @@ const Routes = createBrowserRouter([
     path: "",
     element: <Layout />,
     children: [
-      { path: "", element: <Home /> },
+      { index: true, element: <Home /> },
       { path: "details/:id", element: <VisaDetails /> },
       { path: "all-visas", element: <AllVisas /> },
       {

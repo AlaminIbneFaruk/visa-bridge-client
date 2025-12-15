@@ -1,6 +1,6 @@
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { useContext, useState, useEffect } from "react";
-import { AuthContext } from "../../provider/AuthProvider";
+import { AuthContext } from "../../../provider/AuthProvider";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 

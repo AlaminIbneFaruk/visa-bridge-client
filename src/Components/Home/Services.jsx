@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import SectionTitle from "./SectionContent";
+import SectionTitle from "../SectionContent";
 
 const Services = () => {
   return (

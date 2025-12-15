@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const DarkModeToggle = () => {
   const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
@@ -22,7 +23,7 @@ const DarkModeToggle = () => {
         aria-pressed={theme === "dark"}
         aria-label={theme === "light" ? "Enable dark mode" : "Enable light mode"}
       >
-        {theme === "light" ? "🌙" : "🌞"}
+        {theme === "light" ? <FaMoon/> : <FaSun/>}
       </button>
     </aside>
   );
